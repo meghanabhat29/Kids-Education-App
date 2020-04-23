@@ -10,16 +10,15 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity android:name=".Question">
+        </activity>
+        <activity
+            android:name=".Splashscreen"
+            android:label="Kids Education App">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-        </activity>
-        <activity
-            android:name=".Splashscreen"
-            android:label="Kids Education App">
-
         </activity>
         <activity android:name=".LoginActivity" />
         <activity android:name=".MainActivity"></activity>

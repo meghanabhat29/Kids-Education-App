@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "848657537524",
+    "firebase_url": "https://kidseduapp-9df9c.firebaseio.com",
+    "project_id": "kidseduapp-9df9c",
+    "storage_bucket": "kidseduapp-9df9c.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:848657537524:android:de6190f75c541750a501a1",
+        "android_client_info": {
+          "package_name": "com.example.educationapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "848657537524-6l00fihkb4cbahau6h5oig5fhonbhhum.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCYNNiO8PihYco4IQl2B1gm7_jluvNKxjw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "848657537524-6l00fihkb4cbahau6h5oig5fhonbhhum.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
