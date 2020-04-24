@@ -9,6 +9,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <activity android:name=".OneMany"></activity>
         <activity android:name=".Dashboard">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -16,13 +17,11 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".Article">
-
-        </activity>
+        <activity android:name=".Article"></activity>
         <activity android:name=".Question" />
         <activity
             android:name=".Splashscreen"
-            android:label="Kids Education App"></activity>
+            android:label="Kids Education App" />
         <activity android:name=".LoginActivity" />
         <activity android:name=".MainActivity" />
     </application>
