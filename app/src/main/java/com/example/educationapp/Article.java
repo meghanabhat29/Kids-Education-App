@@ -1,6 +1,6 @@
 package com.example.educationapp;
 
-import androidx.appcompat.app.AppCompatActivity;
+import  androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 

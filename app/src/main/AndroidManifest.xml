@@ -11,13 +11,15 @@
         android:theme="@style/AppTheme">
         <activity android:name=".Dashboard"></activity>
         <activity android:name=".Article">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
-        <activity android:name=".Question" />
+        <activity android:name=".Question">
+        <intent-filter>
+            <action android:name="android.intent.action.MAIN" />
+
+            <category android:name="android.intent.category.LAUNCHER" />
+        </intent-filter>
+        </activity>
         <activity
             android:name=".Splashscreen"
             android:label="Kids Education App"></activity>
