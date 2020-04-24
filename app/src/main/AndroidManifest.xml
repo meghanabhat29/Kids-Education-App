@@ -10,6 +10,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
 
+<<<<<<< HEAD
         <activity android:name=".Article"/>
 
         <activity android:name=".OneMany">
@@ -21,8 +22,18 @@
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
             </intent-filter>
+=======
+        <activity android:name=".Dashboard"></activity>
+        <activity android:name=".Article"></activity>
+        <activity android:name=".OneMany">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+>>>>>>> 4978524aef6ba1f770541a9b217fda130acdb3da
 
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
         </activity>
+<<<<<<< HEAD
         <activity android:name=".Question">
         <intent-filter>
             <action android:name="android.intent.action.MAIN" />
@@ -33,6 +44,10 @@
         <activity
             android:name=".Splashscreen"
             android:label="Kids Education App" />
+=======
+        <activity android:name=".Question"></activity>
+        <activity android:name=".Splashscreen" android:label="Kids Education App" />
+>>>>>>> 4978524aef6ba1f770541a9b217fda130acdb3da
         <activity android:name=".LoginActivity" />
         <activity android:name=".MainActivity" />
     </application>
