@@ -9,16 +9,19 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".SmallBigLetter">
+        <activity android:name=".PutInPlace">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".ManyOne"></activity>
+        <activity android:name=".SmallBigLetter">
+
+        </activity>
+        <activity android:name=".ManyOne" />
         <activity android:name=".Article" />
-        <activity android:name=".OneMany"></activity>
+        <activity android:name=".OneMany" />
         <activity android:name=".Dashboard" />
         <activity android:name=".Question" />
         <activity android:name=".Splashscreen" />
