@@ -6,11 +6,15 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.speech.RecognizerIntent;
+import android.speech.tts.TextToSpeech;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import com.google.android.gms.tasks.OnSuccessListener;
 
 import java.util.ArrayList;
 import java.util.Locale;
@@ -18,9 +22,10 @@ import java.util.Random;
 
 public class Question extends AppCompatActivity {
     TextView mTextTv;
-    ImageButton mVoiceBtn;
+    ImageButton mVoiceBtn, mSpeakBtn;
     TextView mQuestion;
     Button mNext;
+    private TextToSpeech mTTS;
     private static final int REQUEST_CODE_SPEECH_INPUT = 1000;
 
     @Override
@@ -32,6 +37,31 @@ public class Question extends AppCompatActivity {
         mVoiceBtn = findViewById(R.id.micBtn);
         mQuestion = findViewById(R.id.textViewQuestion);
         mNext = findViewById(R.id.buttonNext);
+        mSpeakBtn = findViewById(R.id.imageViewSpeak);
+
+        mTTS = new TextToSpeech(this, new TextToSpeech.OnInitListener() {
+            @Override
+            public void onInit(int status) {
+                if(status == TextToSpeech.SUCCESS)
+                {
+                   int result =  mTTS.setLanguage(Locale.ENGLISH);
+                   if(result == TextToSpeech.LANG_MISSING_DATA || result == TextToSpeech.LANG_NOT_SUPPORTED)
+                       Log.e("TTS","Language not supported");
+                }
+                else
+                    Log.e("TTS","Initialisation Failed!");
+            }
+        });
+
+        mSpeakBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view)
+            {
+                String question = mQuestion.getText().toString();
+                voice(question);
+            }
+        });
+
 
         mVoiceBtn.setOnClickListener(new View.OnClickListener()
         {
@@ -83,6 +113,24 @@ public class Question extends AppCompatActivity {
         }
     }
 
+    private void voice(String text)
+    {
+        mTTS.setPitch((float) 1.0);
+        mTTS.setSpeechRate((float) 1.0);
+        mTTS.speak(text, TextToSpeech.QUEUE_FLUSH, null);
+    }
+
+    @Override
+    protected void onDestroy()
+    {
+        if(mTTS != null)
+        {
+            mTTS.stop();
+            mTTS.shutdown();
+        }
+        super.onDestroy();
+    }
+
     @Override
     protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
@@ -100,8 +148,8 @@ public class Question extends AppCompatActivity {
                     else {
                         mTextTv.setText("Incorrect!");
                         mTextTv.setTextColor(0xFFF8070F);
-
                     }
+                    voice(mTextTv.getText().toString());
                 }
                 break;
 
