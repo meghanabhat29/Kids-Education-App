@@ -9,32 +9,18 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-<<<<<<< HEAD
+
         <activity android:name=".Dashboard"></activity>
-        <activity android:name=".Article">
-=======
-        <activity android:name=".OneMany"></activity>
-        <activity android:name=".Dashboard">
+        <activity android:name=".Article"></activity>
+        <activity android:name=".OneMany">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
->>>>>>> 621e9d9dc0ff096263dd012150d40768413a18df
 
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
         </activity>
-<<<<<<< HEAD
-        <activity android:name=".Question">
-        <intent-filter>
-            <action android:name="android.intent.action.MAIN" />
-
-            <category android:name="android.intent.category.LAUNCHER" />
-        </intent-filter>
-        </activity>
-=======
-        <activity android:name=".Article"></activity>
-        <activity android:name=".Question" />
->>>>>>> 621e9d9dc0ff096263dd012150d40768413a18df
-        <activity
-            android:name=".Splashscreen"
-            android:label="Kids Education App" />
+        <activity android:name=".Question"></activity>
+        <activity android:name=".Splashscreen" android:label="Kids Education App" />
         <activity android:name=".LoginActivity" />
         <activity android:name=".MainActivity" />
     </application>
