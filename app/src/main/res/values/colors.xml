@@ -8,4 +8,6 @@
     <color name="red">#F23B5F</color>
     <color name="white">#FFFFFF</color>
     <color name="light_grey">#E8EBEC</color>
+    <color name="textcardColor">#3f3f3f</color>
+    <color name="cardColor">#ffffff</color>
 </resources>
