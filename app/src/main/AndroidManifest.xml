@@ -16,15 +16,16 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".SmallBigLetter" />
-        <activity android:name=".ManyOne" />
-        <activity android:name=".Article" />
-        <activity android:name=".OneMany" />
-        <activity android:name=".Dashboard" />
-        <activity android:name=".Question" />
-        <activity android:name=".Splashscreen" />
-        <activity android:name=".LoginActivity" />
-        <activity android:name=".MainActivity" />
+        <activity android:name=".AlphabetDashboard"/>
+        <activity android:name=".SmallBigLetter"></activity>
+        <activity android:name=".ManyOne"></activity>
+        <activity android:name=".Article"></activity>
+        <activity android:name=".OneMany"></activity>
+        <activity android:name=".Dashboard"></activity>
+        <activity android:name=".Question"></activity>
+        <activity android:name=".Splashscreen"></activity >
+        <activity android:name=".LoginActivity"></activity>
+        <activity android:name=".MainActivity"></activity>
     </application>
 
 </manifest>
