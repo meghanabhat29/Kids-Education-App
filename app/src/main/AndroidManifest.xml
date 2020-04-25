@@ -9,12 +9,16 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+<<<<<<< HEAD
         <activity android:name=".AlphabetDashboard">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+=======
+        <activity android:name=".PutInPlace">
+>>>>>>> 6dc1bbb3d9140c52edf4e11102df05d6a2e4770b
         </activity>
         <activity android:name=".PutInPlace"/>
         <activity android:name=".AlphabetPractice"/>
@@ -24,7 +28,13 @@
         <activity android:name=".OneMany"></activity>
         <activity android:name=".Dashboard"></activity>
         <activity android:name=".Question"></activity>
-        <activity android:name=".Splashscreen"></activity >
+        <activity android:name=".Splashscreen">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity >
         <activity android:name=".LoginActivity"></activity>
         <activity android:name=".MainActivity"></activity>
     </application>

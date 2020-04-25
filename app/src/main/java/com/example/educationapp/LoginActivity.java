@@ -43,7 +43,7 @@ public class LoginActivity extends AppCompatActivity {
         mAuth = FirebaseAuth.getInstance();
         if (mAuth.getCurrentUser()!=null){
             //String uid = mAuth.getCurrentUser().getUid();
-            Intent intent = new Intent(getApplicationContext(), Question.class);
+            Intent intent = new Intent(getApplicationContext(), Dashboard.class);
             intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
             startActivity(intent);
             finish();
@@ -57,7 +57,7 @@ public class LoginActivity extends AppCompatActivity {
         Backbutton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent=new Intent(LoginActivity.this,MainActivity.class);
+                Intent intent=new Intent(LoginActivity.this,Dashboard.class);
                 startActivity(intent);
             }
         });
