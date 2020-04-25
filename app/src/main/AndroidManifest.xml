@@ -9,14 +9,15 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".PutInPlace">
+        <activity android:name=".AlphabetDashboard">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".AlphabetDashboard"/>
+        <activity android:name=".PutInPlace"/>
+        <activity android:name=".AlphabetPractice"/>
         <activity android:name=".SmallBigLetter"></activity>
         <activity android:name=".ManyOne"></activity>
         <activity android:name=".Article"></activity>

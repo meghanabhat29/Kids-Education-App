@@ -22,7 +22,7 @@ import java.util.Random;
 
 public class Question extends AppCompatActivity {
     TextView mTextTv;
-    ImageButton mVoiceBtn, mSpeakBtn;
+    ImageButton mVoiceBtn;
     TextView mQuestion;
     Button mNext;
     private TextToSpeech mTTS;
@@ -37,7 +37,7 @@ public class Question extends AppCompatActivity {
         mVoiceBtn = findViewById(R.id.micBtn);
         mQuestion = findViewById(R.id.textViewQuestion);
         mNext = findViewById(R.id.buttonNext);
-        mSpeakBtn = findViewById(R.id.imageViewSpeak);
+
 
         mTTS = new TextToSpeech(this, new TextToSpeech.OnInitListener() {
             @Override
@@ -53,14 +53,7 @@ public class Question extends AppCompatActivity {
             }
         });
 
-        mSpeakBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view)
-            {
-                String question = mQuestion.getText().toString();
-                voice(question);
-            }
-        });
+
 
 
         mVoiceBtn.setOnClickListener(new View.OnClickListener()
@@ -86,10 +79,10 @@ public class Question extends AppCompatActivity {
     {
 
             String alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-            String fullalphabet = alphabet + alphabet.toLowerCase() + "0123456789";
+            String fullalphabet = alphabet + alphabet.toLowerCase();
             Random random = new Random();
 
-            char code = fullalphabet.charAt(random.nextInt(61));
+            char code = fullalphabet.charAt(random.nextInt(51));
 
             mQuestion.setText(Character.toString(code));
     }

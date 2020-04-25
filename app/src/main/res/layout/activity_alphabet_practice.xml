@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/balls"
-    tools:context=".Question">
+    tools:context=".AlphabetPractice">
 
     <FrameLayout
         android:id="@+id/frameLayout"
@@ -30,16 +30,16 @@
                 android:layout_height="match_parent"
                 android:fontFamily="@font/bold"
                 android:gravity="center"
-                android:text="A"
+                android:text="Hello"
                 android:textAlignment="center"
                 android:textColor="#000000"
                 android:textSize="100sp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.411"
+                app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.503" />
+                app:layout_constraintVertical_bias="1.0" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -48,18 +48,17 @@
 
 
     <ImageButton
-        android:id="@+id/micBtn"
-        android:layout_width="243dp"
-        android:layout_height="81dp"
-        android:layout_marginBottom="188dp"
-        android:layout_marginTop="20dp"
+        android:id="@+id/imageViewSpeak"
+        android:layout_width="241dp"
+        android:layout_height="83dp"
+        android:layout_marginTop="48dp"
         android:background="@drawable/button"
         app:layout_constraintBottom_toTopOf="@+id/frameLayout2"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageViewSpeak"
-        app:layout_constraintVertical_bias="0.0"
-        app:srcCompat="@drawable/mic" />
+        app:layout_constraintTop_toBottomOf="@+id/frameLayout"
+        app:layout_constraintVertical_bias="0.228"
+        app:srcCompat="@drawable/speak" />
 
     <FrameLayout
         android:id="@+id/frameLayout2"
@@ -76,20 +75,7 @@
             android:id="@+id/wrong"
             android:visibility="invisible">
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:fontFamily="@font/regular"
-                android:text="Wrong! Please retry"
-                android:textColor="@color/white"
-                android:textSize="20sp"
-                android:paddingLeft="10sp"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.094"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.492" />
+
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -102,9 +88,8 @@
 
             <Button
                 android:id="@+id/buttonNext"
-                android:layout_width="116dp"
-                android:layout_height="52dp"
-                android:layout_marginEnd="20dp"
+                android:layout_width="199dp"
+                android:layout_height="48dp"
                 android:background="#9ACD32"
                 android:fontFamily="@font/regular"
                 android:padding="10sp"
@@ -114,24 +99,11 @@
                 android:textSize="22sp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintVertical_bias="0.491" />
 
-            <TextView
-                android:id="@+id/textTv"
-                android:layout_width="161dp"
-                android:layout_height="49dp"
-                android:fontFamily="@font/regular"
-                android:padding="10sp"
-                android:text=""
-                android:textColor="@color/white"
-                android:textSize="20sp"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.094"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.492" />
+
         </androidx.constraintlayout.widget.ConstraintLayout>
 
 

@@ -9,20 +9,29 @@ import androidx.appcompat.app.AppCompatActivity;
 
 public class AlphabetDashboard extends AppCompatActivity
 {
-    Button mPractice;
+    Button mTest, mPractice;
     @Override
     protected void onCreate(Bundle savedInstanceState)
     {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_alphabet_dashboard);
+        mTest = findViewById(R.id.buttonTest);
         mPractice = findViewById(R.id.buttonPractice);
 
-        mPractice.setOnClickListener(new View.OnClickListener() {
+        mTest.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view)
             {
 
                 Intent intent = new Intent(AlphabetDashboard.this, Question.class);
+                startActivity(intent);
+            }
+        });
+
+        mPractice.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(AlphabetDashboard.this, AlphabetPractice.class);
                 startActivity(intent);
             }
         });
