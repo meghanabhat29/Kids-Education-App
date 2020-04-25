@@ -10,16 +10,31 @@
 
     <Button
         android:id="@+id/button11"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="154dp"
+        android:layout_height="71dp"
         android:background="@drawable/submit_btn_border"
         android:text="Submit"
+        android:textSize="30dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintHorizontal_bias="0.85"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.938" />
+        app:layout_constraintVertical_bias="0.975" />
+
+    <Button
+        android:id="@+id/buttonReset"
+        android:layout_width="154dp"
+        android:layout_height="71dp"
+        android:background="@drawable/submit_btn_border"
+        android:text="RESET"
+        android:textSize="30dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.147"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.975" />
 
     <Button
         android:id="@+id/button7"
@@ -71,13 +86,14 @@
 
     <TextView
         android:id="@+id/textView11"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:fontFamily="@font/mo_li"
+        android:layout_width="71dp"
+        android:layout_height="170dp"
+        android:fontFamily="sans-serif"
         android:text="C"
-        android:textColor="@color/white"
-        android:textSize="90dp"
+        android:textColor="@android:color/black"
+        android:textSize="100sp"
 
+        android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.178"
@@ -106,10 +122,10 @@
         android:textSize="50dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.117"
+        app:layout_constraintHorizontal_bias="0.139"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textInputEditText4"
-        app:layout_constraintVertical_bias="0.132" />
+        app:layout_constraintVertical_bias="0.083" />
 
     <Button
         android:id="@+id/button4"
@@ -146,12 +162,14 @@
         app:layout_constraintVertical_bias="0.344" />
 
     <com.google.android.material.textfield.TextInputEditText
+        android:id="@+id/textInputEditText2"
         android:layout_width="71dp"
         android:layout_height="126dp"
-        android:fontFamily="@font/mo_li"
+        android:fontFamily="sans-serif"
+        android:textAlignment="center"
         android:textColor="@color/white"
         android:textColorHint="@color/white"
-        android:textSize="90dp"
+        android:textSize="90sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.214"
@@ -163,7 +181,7 @@
         android:id="@+id/textInputEditText4"
         android:layout_width="71dp"
         android:layout_height="126dp"
-        android:fontFamily="@font/mo_li"
+        android:fontFamily="sans-serif"
         android:textColor="@color/white"
         android:textColorHint="@color/white"
         android:textSize="90dp"
@@ -178,7 +196,7 @@
         android:id="@+id/textInputEditText5"
         android:layout_width="71dp"
         android:layout_height="126dp"
-        android:fontFamily="@font/mo_li"
+        android:fontFamily="sans-serif"
         android:textColor="@color/white"
         android:textColorHint="@color/white"
         android:textSize="90dp"
@@ -193,7 +211,7 @@
         android:id="@+id/textInputEditText6"
         android:layout_width="71dp"
         android:layout_height="126dp"
-        android:fontFamily="@font/mo_li"
+        android:fontFamily="sans-serif"
         android:textColor="@color/white"
         android:textColorHint="@color/white"
         android:textSize="90dp"
@@ -208,7 +226,7 @@
         android:id="@+id/textInputEditText3"
         android:layout_width="71dp"
         android:layout_height="126dp"
-        android:fontFamily="@font/mo_li"
+        android:fontFamily="sans-serif"
         android:textColor="@color/white"
         android:textColorHint="@color/white"
         android:textSize="90dp"
