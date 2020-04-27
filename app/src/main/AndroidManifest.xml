@@ -9,7 +9,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".Dashboard">
+        <activity android:name=".OneManyDashboard">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -20,11 +20,12 @@
         <activity android:name=".PutInPlace"/>
         <activity android:name=".AlphabetPractice"/>
         <activity android:name=".SmallBigLetter"></activity>
-        <activity android:name=".ManyOne"></activity>
+        <activity android:name=".Dashboard"></activity>
         <activity android:name=".Article"></activity>
-        <activity android:name=".OneMany"></activity>
+        <activity android:name=".ManyOne"></activity>
         <activity android:name=".AlphabetDashboard"></activity>
         <activity android:name=".Question"></activity>
+        <activity android:name=".OneMany"/>
         <activity android:name=".Splashscreen">
         </activity >
         <activity android:name=".LoginActivity"></activity>
