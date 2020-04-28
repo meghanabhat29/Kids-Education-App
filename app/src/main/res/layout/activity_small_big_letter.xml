@@ -4,16 +4,17 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/caps_background"
     tools:context=".SmallBigLetter">
 
     <TextView
-        android:id="@+id/textView12"
+        android:id="@+id/textViewSmall"
         android:layout_width="174dp"
         android:layout_height="64dp"
         android:background="@drawable/border_rectangle"
         android:fontFamily="@font/mo_li"
         android:padding="10dp"
-        android:text="hello"
+        android:text="h"
         android:textAlignment="center"
         android:textColor="#000000"
         android:textSize="30dp"
@@ -25,13 +26,13 @@
         app:layout_constraintVertical_bias="0.274" />
 
     <TextView
-        android:id="@+id/textView13"
+        android:id="@+id/textViewCapital"
         android:layout_width="174dp"
         android:layout_height="64dp"
         android:background="@drawable/border_rectangle"
         android:fontFamily="@font/mo_li"
         android:padding="10dp"
-        android:text="HELLO"
+        android:text="H"
         android:textAlignment="center"
         android:textColor="#000000"
         android:textSize="30dp"
@@ -75,7 +76,8 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.482" />
 
-    <ImageView
+    <ImageButton
+        android:id="@+id/imageButtonCross"
         android:layout_width="100dp"
         android:layout_height="100dp"
         android:background="@drawable/ic_cross"
@@ -83,19 +85,21 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.733"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView13"
+        app:layout_constraintTop_toBottomOf="@+id/textViewCapital"
         app:layout_constraintVertical_bias="0.426" />
 
-    <ImageView
+    <ImageButton
+        android:id="@+id/imageButtonTick"
         android:layout_width="112dp"
         android:layout_height="100dp"
+        android:layout_marginBottom="84dp"
         android:background="@drawable/ic_tick"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.196"
+        app:layout_constraintHorizontal_bias="0.187"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView13"
-        app:layout_constraintVertical_bias="0.433" />
+        app:layout_constraintTop_toBottomOf="@+id/textViewCapital"
+        app:layout_constraintVertical_bias="0.884" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

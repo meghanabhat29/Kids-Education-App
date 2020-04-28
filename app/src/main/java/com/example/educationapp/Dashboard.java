@@ -9,21 +9,32 @@ import android.view.View;
 
 public class Dashboard extends AppCompatActivity {
 
-    CardView speak, put, caps;
+    CardView speak, put, caps, revise;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_dashboard);
 
+        revise = findViewById(R.id.revise);
         speak = findViewById(R.id.speak);
         put = findViewById(R.id.inplace);
         caps = findViewById(R.id.caps);
 
+        revise.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getApplicationContext(), AlphabetPractice.class);
+                intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                startActivity(intent);
+            }
+        });
+
+
         speak.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(getApplicationContext(), AlphabetDashboard.class);
+                Intent intent = new Intent(getApplicationContext(), Question.class);
                 intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                 startActivity(intent);
             }
