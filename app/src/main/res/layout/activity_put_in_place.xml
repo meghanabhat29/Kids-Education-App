@@ -87,16 +87,16 @@
     <TextView
         android:id="@+id/textView11"
         android:layout_width="71dp"
-        android:layout_height="170dp"
+        android:layout_height="126dp"
         android:fontFamily="sans-serif"
         android:text="C"
         android:textColor="@android:color/black"
         android:textSize="100sp"
-
+        android:textAlignment="center"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.178"
+        app:layout_constraintHorizontal_bias="0.182"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.135" />
@@ -125,7 +125,7 @@
         app:layout_constraintHorizontal_bias="0.117"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textInputEditText4"
-        app:layout_constraintVertical_bias="0.133" />
+        app:layout_constraintVertical_bias="0.16" />
 
     <Button
         android:id="@+id/button4"
