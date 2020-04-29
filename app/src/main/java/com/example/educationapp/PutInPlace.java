@@ -113,22 +113,28 @@ public class PutInPlace extends AppCompatActivity {
 
         Submit.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v)
-            {
-                boolean flag=true;
-                for(int i=0; i<5; i++)
-                {
-                    if(Answer[i].getText().toString().charAt(0)==startingAlphabet+i+1)
-                        continue;
-                    else {
-                        Toast.makeText(PutInPlace.this, "WRONG ANSWER", Toast.LENGTH_SHORT).show();
-                        flag=false;
-                        break;
-                    }
-                }
-                if(flag)
-                    Toast.makeText(PutInPlace.this, "CORRECT ANSWER", Toast.LENGTH_SHORT).show();
+            public void onClick(View v) {
+                boolean flag = true;
 
+                try {
+
+                    for (int i = 0; i < 5; i++) {
+
+                        if (Answer[i].getText().toString().charAt(0) == startingAlphabet + i + 1)
+                            continue;
+                        else {
+                            Toast.makeText(PutInPlace.this, "WRONG ANSWER", Toast.LENGTH_SHORT).show();
+                            flag = false;
+                            break;
+                        }
+                    }
+                    if (flag)
+                        Toast.makeText(PutInPlace.this, "CORRECT ANSWER", Toast.LENGTH_SHORT).show();
+
+                } catch (Exception e)
+                {
+                    Toast.makeText(PutInPlace.this, "COMPLETE THE ANSWER", Toast.LENGTH_SHORT).show();;
+                }
             }
         });
 
