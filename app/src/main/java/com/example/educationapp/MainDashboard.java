@@ -23,9 +23,9 @@ public class MainDashboard extends AppCompatActivity {
         startActivity(intent);
     }
     public void Articlefn(View view) {
-        //Intent intent = new Intent(getApplicationContext(), Dashboard.class);
-        //startActivity(intent);
-        Toast.makeText(MainDashboard.this,"Under Development", Toast.LENGTH_SHORT).show();
+        Intent intent = new Intent(getApplicationContext(), Article.class);
+        startActivity(intent);
+      //  Toast.makeText(MainDashboard.this,"Under Development", Toast.LENGTH_SHORT).show();
     }
     public void Wordfn(View view) {
         //Intent intent = new Intent(getApplicationContext(), Dashboard.class);
