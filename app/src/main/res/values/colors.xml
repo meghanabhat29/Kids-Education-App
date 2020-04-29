@@ -10,4 +10,9 @@
     <color name="light_grey">#E8EBEC</color>
     <color name="textcardColor">#3f3f3f</color>
     <color name="cardColor">#ffffff</color>
+    <color name="lightgray">#EDEDED</color>
+    <color name="deeppurple">#7c4dff</color>
+    <color name="pink">#fe104d</color>
+    <color name="green">#00bfa5</color>
+    <color name="yello">#ffb300</color>
 </resources>

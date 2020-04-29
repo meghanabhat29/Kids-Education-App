@@ -43,7 +43,7 @@ public class LoginActivity extends AppCompatActivity {
         mAuth = FirebaseAuth.getInstance();
         if (mAuth.getCurrentUser()!=null){
             //String uid = mAuth.getCurrentUser().getUid();
-            Intent intent = new Intent(getApplicationContext(), Dashboard.class);
+            Intent intent = new Intent(getApplicationContext(), MainDashboard.class);
             intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
             startActivity(intent);
             finish();
@@ -107,7 +107,7 @@ public class LoginActivity extends AppCompatActivity {
                             Log.d(TAG,"SignInWithEmail:Success",task.getException());
                             Toast.makeText(getApplicationContext(),"Successful",Toast.LENGTH_SHORT).show();
                             //String uid = mAuth.getCurrentUser().getUid();
-                            Intent intent = new Intent(getApplicationContext(), Question.class);
+                            Intent intent = new Intent(getApplicationContext(), MainDashboard.class);
                             intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                             startActivity(intent);
                             finish();
