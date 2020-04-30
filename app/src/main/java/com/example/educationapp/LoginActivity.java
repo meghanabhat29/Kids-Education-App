@@ -42,7 +42,7 @@ public class LoginActivity extends AppCompatActivity {
 
         mAuth = FirebaseAuth.getInstance();
         if (mAuth.getCurrentUser()!=null){
-            //String uid = mAuth.getCurrentUser().getUid();
+            String uid = mAuth.getCurrentUser().getUid();
             Intent intent = new Intent(getApplicationContext(), MainDashboard.class);
             intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
             startActivity(intent);

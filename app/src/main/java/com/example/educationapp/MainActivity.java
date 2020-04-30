@@ -20,7 +20,7 @@ public class MainActivity extends AppCompatActivity {
 
         loginButton=findViewById(R.id.loginBtn);
 
-        FirebaseAuth.getInstance().signOut();
+        //FirebaseAuth.getInstance().signOut();
 
         loginButton.setOnClickListener(new View.OnClickListener() {
             @Override

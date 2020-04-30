@@ -18,7 +18,7 @@
         <activity android:name=".AlphabetPractice" />
         <activity android:name=".SmallBigLetter" />
         <activity android:name=".ManyOne" />
-        <activity android:name=".Article" />
+        <activity android:name=".Article"/>
         <activity android:name=".OneMany" />
         <activity android:name=".AlphabetDashboard" />
         <activity android:name=".Question" />
