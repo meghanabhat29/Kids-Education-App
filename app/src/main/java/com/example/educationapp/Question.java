@@ -2,11 +2,14 @@ package com.example.educationapp;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.constraintlayout.widget.ConstraintLayout;
 
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.speech.RecognizerIntent;
 import android.speech.tts.TextToSpeech;
+import android.text.Layout;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
@@ -27,6 +30,8 @@ public class Question extends AppCompatActivity {
     Button mNext;
     private TextToSpeech mTTS;
     private static final int REQUEST_CODE_SPEECH_INPUT = 1000;
+    ConstraintLayout status1;
+    ConstraintLayout status2;
 
     @Override
     protected void onCreate(Bundle savedInstanceState)
@@ -37,7 +42,8 @@ public class Question extends AppCompatActivity {
         mVoiceBtn = findViewById(R.id.micBtn);
         mQuestion = findViewById(R.id.textViewQuestion);
         mNext = findViewById(R.id.buttonNext);
-
+        status1 = findViewById(R.id.correct);
+        status2 = findViewById(R.id.wrong);
 
         mTTS = new TextToSpeech(this, new TextToSpeech.OnInitListener() {
             @Override
@@ -77,6 +83,9 @@ public class Question extends AppCompatActivity {
 
     private void nextQuestion()
     {
+
+        mTextTv.setText("RECORD");
+        mNext.setVisibility(View.GONE);
 
             String alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
             String fullalphabet = alphabet + alphabet.toLowerCase();
@@ -135,12 +144,16 @@ public class Question extends AppCompatActivity {
                     ArrayList<String> result = data.getStringArrayListExtra(RecognizerIntent.EXTRA_RESULTS);
                     String answer = mQuestion.getText().toString();
                     if(result.get(0).equalsIgnoreCase(answer) || result.get(1).equalsIgnoreCase(answer)) {
-                        mTextTv.setText("Correct!");
-                        mTextTv.setTextColor(0xFF00FF00);
+                        status2.setVisibility(View.GONE);
+                        status1.setVisibility(View.VISIBLE);
+                        mTextTv.setText("Correct Answer!");
+                        mNext.setVisibility(View.VISIBLE);
                     }
                     else {
-                        mTextTv.setText("Incorrect!");
-                        mTextTv.setTextColor(0xFFF8070F);
+                        mTextTv.setText("Incorrect! Retry");
+                        status1.setVisibility(View.GONE);
+                        status2.setVisibility(View.VISIBLE);
+
                     }
                     voice(mTextTv.getText().toString());
                 }

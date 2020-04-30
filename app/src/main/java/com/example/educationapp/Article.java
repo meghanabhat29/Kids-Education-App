@@ -28,8 +28,6 @@ public class Article extends AppCompatActivity {
 
         Drawable buttonDrawable1 = Option1.getBackground();
         buttonDrawable1 = DrawableCompat.wrap(buttonDrawable1);
-        Drawable buttonDrawable2 = Option2.getBackground();
-        buttonDrawable2 = DrawableCompat.wrap(buttonDrawable2);
 
         //QUESTION TO BE SET RANDOMLY FROM THE LIST OF WORDS PROVIDED BY THEM.
 
