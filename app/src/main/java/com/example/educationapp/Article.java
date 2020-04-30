@@ -8,10 +8,13 @@ import android.content.res.ColorStateList;
 import android.graphics.Color;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
+import android.os.CountDownTimer;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import java.util.Random;
 
 public class Article extends AppCompatActivity {
 
@@ -23,35 +26,48 @@ public class Article extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_article);
 
+        //COLOR CHANGE NOT HAPPENING INSIDE FUNCTIONS, BUT HAPPENING HERE. CHECK LATER
+
+//        Option1 = findViewById(R.id.button2);
+//
+//        Drawable buttonDrawable1 = Option1.getBackground();
+//        buttonDrawable1 = DrawableCompat.wrap(buttonDrawable1);
+//        DrawableCompat.setTint(buttonDrawable1, Color.RED);
+//        Option1.setBackground(buttonDrawable1);
+
+
+        setOnclick();
+
+    }
+
+    private void setOnclick() {
         Option1 = findViewById(R.id.button2);
         Option2 = findViewById(R.id.button4);
-
-        Drawable buttonDrawable1 = Option1.getBackground();
-        buttonDrawable1 = DrawableCompat.wrap(buttonDrawable1);
-
-        //QUESTION TO BE SET RANDOMLY FROM THE LIST OF WORDS PROVIDED BY THEM.
-
         Question = findViewById(R.id.textView2);
-        final char startingAlphabet = Question.getText().toString().charAt(0);
-        //Exception strings to be added too, as ' || checkException(Question.getText().toString()) '
 
-        // HAVE TO USE HANDLER TO SORT DELAY ISSUE.
+        final char startingAlphabet = Question.getText().toString().charAt(0);
 
         if (isVowel(startingAlphabet)) {
-            final Drawable finalButtonDrawable = buttonDrawable1;
             Option1.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v)
                 {
-                    DrawableCompat.setTint(finalButtonDrawable, Color.RED);
-                    Option1.setBackground(finalButtonDrawable);
-                    DrawableCompat.setTint(finalButtonDrawable, Color.GREEN);
-                    Option2.setBackground(finalButtonDrawable);
-                    Toast.makeText(Article.this, "WRONG ANSWER", Toast.LENGTH_LONG).show();
-                    //Thread.sleep(1000);
-                    Intent intent = new Intent(getApplicationContext(), Article.class);
-                    startActivity(intent);
-                    finish();
+                    Drawable buttonDrawable1 = Option1.getBackground();
+                    buttonDrawable1 = DrawableCompat.wrap(buttonDrawable1);
+                    DrawableCompat.setTint(buttonDrawable1 , Color.RED);
+                    Option1.setBackground(buttonDrawable1 );
+                    DrawableCompat.setTint(buttonDrawable1 , Color.GREEN);
+                    Option2.setBackground(buttonDrawable1 );
+                    Toast.makeText(Article.this, "WRONG ANSWER", Toast.LENGTH_SHORT).show();
+                    new CountDownTimer(1000, 1) {
+                        public void onFinish() {
+                            nextQuestion();
+                        }
+
+                        public void onTick(long millisUntilFinished) {
+                            // millisUntilFinished    The amount of time until finished.
+                        }
+                    }.start();
                 }
             });
 
@@ -59,31 +75,46 @@ public class Article extends AppCompatActivity {
                 @Override
                 public void onClick(View v)
                 {
-                    DrawableCompat.setTint(finalButtonDrawable, Color.RED);
-                    Option1.setBackground(finalButtonDrawable);
-                    DrawableCompat.setTint(finalButtonDrawable, Color.GREEN);
-                    Option2.setBackground(finalButtonDrawable);
-                    Toast.makeText(Article.this, "CORRECT ANSWER", Toast.LENGTH_LONG).show();
-                    Intent intent = new Intent(getApplicationContext(), Article.class);
-                    startActivity(intent);
-                    finish();
+                    Drawable buttonDrawable1 = Option1.getBackground();
+                    buttonDrawable1 = DrawableCompat.wrap(buttonDrawable1);
+                    DrawableCompat.setTint(buttonDrawable1 , Color.RED);
+                    Option1.setBackground(buttonDrawable1 );
+                    DrawableCompat.setTint(buttonDrawable1 , Color.GREEN);
+                    Option2.setBackground(buttonDrawable1 );
+                    Toast.makeText(Article.this, "CORRECT ANSWER", Toast.LENGTH_SHORT).show();
+                    new CountDownTimer(1000, 1) {
+                        public void onFinish() {
+                            nextQuestion();
+                        }
+
+                        public void onTick(long millisUntilFinished) {
+                            // millisUntilFinished    The amount of time until finished.
+                        }
+                    }.start();
                 }
             });
         }
         else {
-            final Drawable finalButtonDrawable = buttonDrawable1;
             Option1.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v)
                 {
-                    DrawableCompat.setTint(finalButtonDrawable, Color.GREEN);
-                    Option1.setBackground(finalButtonDrawable);
-                    DrawableCompat.setTint(finalButtonDrawable, Color.RED);
-                    Option2.setBackground(finalButtonDrawable);
-                    Toast.makeText(Article.this, "CORRECT ANSWER", Toast.LENGTH_LONG).show();
-                    Intent intent = new Intent(getApplicationContext(), Article.class);
-                    startActivity(intent);
-                    finish();
+                    Drawable buttonDrawable1 = Option1.getBackground();
+                    buttonDrawable1 = DrawableCompat.wrap(buttonDrawable1);
+                    DrawableCompat.setTint(buttonDrawable1 , Color.GREEN);
+                    Option1.setBackground(buttonDrawable1 );
+                    DrawableCompat.setTint(buttonDrawable1 , Color.RED);
+                    Option2.setBackground(buttonDrawable1 );
+                    Toast.makeText(Article.this, "CORRECT ANSWER", Toast.LENGTH_SHORT).show();
+                    new CountDownTimer(1000, 1) {
+                        public void onFinish() {
+                            nextQuestion();
+                        }
+
+                        public void onTick(long millisUntilFinished) {
+                            // millisUntilFinished    The amount of time until finished.
+                        }
+                    }.start();
                 }
             });
 
@@ -91,14 +122,22 @@ public class Article extends AppCompatActivity {
                 @Override
                 public void onClick(View v)
                 {
-                    DrawableCompat.setTint(finalButtonDrawable, Color.GREEN);
-                    Option1.setBackground(finalButtonDrawable);
-                    DrawableCompat.setTint(finalButtonDrawable, Color.RED);
-                    Option2.setBackground(finalButtonDrawable);
-                    Toast.makeText(Article.this, "WRONG ANSWER", Toast.LENGTH_LONG).show();
-                    Intent intent = new Intent(getApplicationContext(), Article.class);
-                    startActivity(intent);
-                    finish();
+                    Drawable buttonDrawable1 = Option1.getBackground();
+                    buttonDrawable1 = DrawableCompat.wrap(buttonDrawable1);
+                    DrawableCompat.setTint(buttonDrawable1 , Color.GREEN);
+                    Option1.setBackground(buttonDrawable1 );
+                    DrawableCompat.setTint(buttonDrawable1 , Color.RED);
+                    Option2.setBackground(buttonDrawable1 );
+                    Toast.makeText(Article.this, "WRONG ANSWER", Toast.LENGTH_SHORT).show();
+                    new CountDownTimer(1000, 1) {
+                        public void onFinish() {
+                            nextQuestion();
+                        }
+
+                        public void onTick(long millisUntilFinished) {
+                            // millisUntilFinished    The amount of time until finished.
+                        }
+                    }.start();
                 }
             });
         }
@@ -108,5 +147,25 @@ public class Article extends AppCompatActivity {
         if (c=='a'|| c=='e'|| c=='i'|| c=='o'||c=='u')
             return true;
         return false;
+    }
+
+    private void nextQuestion()
+    {
+
+        // GET NEXT TEXT
+
+
+        Option1 = findViewById(R.id.button2);
+        Option2 = findViewById(R.id.button4);
+        Question = findViewById(R.id.textView2);
+
+        Question.setText("next_text");
+        Drawable buttonDrawable1 = Option1.getBackground();
+        buttonDrawable1 = DrawableCompat.wrap(buttonDrawable1);
+        DrawableCompat.setTint(buttonDrawable1, Color.WHITE);
+        Option1.setBackground(buttonDrawable1);
+        Option2.setBackground(buttonDrawable1);
+        setOnclick();
+
     }
 }

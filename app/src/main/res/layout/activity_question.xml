@@ -71,7 +71,7 @@
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_height="67dp"
+            android:layout_height="match_parent"
             android:background="#790604"
             android:id="@+id/wrong"
             android:visibility="invisible">
@@ -96,7 +96,7 @@
         <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/correct"
             android:layout_width="match_parent"
-            android:layout_height="67dp"
+            android:layout_height="match_parent"
             android:background="#9ACD32"
             android:visibility="visible">
 
