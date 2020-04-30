@@ -37,9 +37,9 @@ public class MainDashboard extends AppCompatActivity {
         startActivity(intent);
     }
     public void Numbersfn(View view) {
-        //Intent intent = new Intent(getApplicationContext(), Dashboard.class);
-        //startActivity(intent);
-        Toast.makeText(MainDashboard.this,"Under Development", Toast.LENGTH_SHORT).show();
+        Intent intent = new Intent(getApplicationContext(), NumberDashboard.class);
+        startActivity(intent);
+        //Toast.makeText(MainDashboard.this,"Under Development", Toast.LENGTH_SHORT).show();
     }
     public void AdvNumberFn(View view) {
         //Intent intent = new Intent(getApplicationContext(), Dashboard.class);
@@ -47,9 +47,9 @@ public class MainDashboard extends AppCompatActivity {
         Toast.makeText(MainDashboard.this,"Under Development", Toast.LENGTH_SHORT).show();
     }
     public void Timefn(View view) {
-        //Intent intent = new Intent(getApplicationContext(), Dashboard.class);
-        //startActivity(intent);
-        Toast.makeText(MainDashboard.this,"Under Development", Toast.LENGTH_SHORT).show();
+        Intent intent = new Intent(getApplicationContext(), TimeReading.class);
+        startActivity(intent);
+        //Toast.makeText(MainDashboard.this,"Under Development", Toast.LENGTH_SHORT).show();
     }
     public void Furtherfn(View view) {
         //Intent intent = new Intent(getApplicationContext(), Dashboard.class);
