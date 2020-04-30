@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -14,6 +15,7 @@ public class SmallBigLetter extends AppCompatActivity {
 
     TextView Small, Capital;
     ImageButton Tick, Cross;
+    Button Next;
     @Override
     protected void onCreate(Bundle savedInstanceState)
     {
@@ -24,13 +26,20 @@ public class SmallBigLetter extends AppCompatActivity {
         Capital = findViewById(R.id.textViewCapital);
         Tick = findViewById(R.id.imageButtonTick);
         Cross = findViewById(R.id.imageButtonCross);
+        Next = findViewById(R.id.buttonNext);
 
         Tick.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v)
             {
-                if(!Small.getText().toString().equals(Capital.getText().toString().toLowerCase()))
-                    Toast.makeText(SmallBigLetter.this,"Wrong Answer",Toast.LENGTH_SHORT).show();
+                if(!Small.getText().toString().equals(Capital.getText().toString().toLowerCase())) {
+                    Toast.makeText(SmallBigLetter.this, "Wrong Answer", Toast.LENGTH_SHORT).show();
+                    Capital.setText(Small.getText().toString().toUpperCase());
+                    Capital.setTextColor(0xFF00FF00);
+                    Next.setVisibility(View.VISIBLE);
+                    Tick.setEnabled(false);
+                    Cross.setEnabled(false);
+                }
                 else
                 {
                     Toast.makeText(SmallBigLetter.this,"Correct Answer",Toast.LENGTH_SHORT).show();
@@ -43,13 +52,30 @@ public class SmallBigLetter extends AppCompatActivity {
             @Override
             public void onClick(View v)
             {
-                if((Small.getText().toString().equals(Capital.getText().toString().toLowerCase())))
-                    Toast.makeText(SmallBigLetter.this,"Wrong Answer",Toast.LENGTH_SHORT).show();
+                if((Small.getText().toString().equals(Capital.getText().toString().toLowerCase()))) {
+                    Toast.makeText(SmallBigLetter.this, "Wrong Answer", Toast.LENGTH_SHORT).show();
+                    Capital.setText(Small.getText().toString().toUpperCase());
+                    Capital.setTextColor(0xFF00FF00);
+                    Next.setVisibility(View.VISIBLE);
+                    Tick.setEnabled(false);
+                    Cross.setEnabled(false);
+                }
                 else
                 {
                     Toast.makeText(SmallBigLetter.this,"Correct Answer",Toast.LENGTH_SHORT).show();
                     nextQuestion();
                 }
+            }
+        });
+
+        Next.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Next.setVisibility(View.INVISIBLE);
+                nextQuestion();
+                Tick.setEnabled(true);
+                Cross.setEnabled(true);
+                Capital.setTextColor(getResources().getColor(R.color.colorPrimaryDark));
             }
         });
 
