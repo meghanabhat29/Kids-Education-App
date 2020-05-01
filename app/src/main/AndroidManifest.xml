@@ -9,7 +9,11 @@
         android:roundIcon="@mipmap/kid_launcher"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".NumberDashboard"></activity>
+        <activity android:name=".NumberToWords"></activity>
+        <activity android:name=".PutInPlaceNumber" />
+        <activity android:name=".SpeakAloudNumber" />
+        <activity android:name=".NumberRevision" />
+        <activity android:name=".NumberDashboard" />
         <activity android:name=".TimeReading" />
         <activity android:name=".Dashboard" />
         <activity android:name=".MainDashboard" />

@@ -172,7 +172,7 @@
                     android:layout_width="104dp"
                     android:layout_height="108dp"
                     android:layout_gravity="center_horizontal"
-                    android:background="@drawable/ic_numadv" />
+                    android:background="@drawable/ic_number_black" />
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -212,14 +212,14 @@
                     android:layout_width="47dp"
                     android:layout_height="79dp"
                     android:layout_gravity="center_horizontal"
-                    android:background="@drawable/ic_capital" />
+                    android:background="@drawable/ic_noinwords" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="8dp"
                     android:fontFamily="@font/mo_re"
-                    android:text="Capital Letters"
+                    android:text="Numbers to words"
                     android:textColor="@color/textcardColor"
                     android:textSize="14sp"
                     android:textStyle="bold" />
