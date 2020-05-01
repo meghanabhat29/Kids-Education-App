@@ -24,7 +24,7 @@ public class NumberRevision extends AppCompatActivity {
     Button mNext;
     private TextToSpeech mTTS;
     private static final int REQUEST_CODE_SPEECH_INPUT = 1000;
-    static int a = 65;
+    static int a = -1;
 
     @Override
     protected void onCreate(Bundle savedInstanceState)
@@ -55,12 +55,8 @@ public class NumberRevision extends AppCompatActivity {
             @Override
             public void onClick(View view)
             {
-                if(mQuestion.getText().toString().equals("Hello"))
-                    voice("Press Next");
-                else {
-                    String question = mQuestion.getText().toString().substring(0, 1);
-                    voice(question);
-                }
+                String question = mQuestion.getText().toString();
+                voice(question);
             }
         });
 
@@ -84,8 +80,8 @@ public class NumberRevision extends AppCompatActivity {
                 mVoiceBtn.setVisibility(View.VISIBLE);
                 mSpeakBtn.setVisibility(View.VISIBLE);
                 mNext.setText("NEXT");
-                if(a==90 || mQuestion.getText().toString().equals("Hello"))
-                    a=64;
+                if(a==100 || mQuestion.getText().toString().equals("Hello"))
+                    a=-1;
                 nextQuestion(++a);
             }
         });
@@ -95,10 +91,7 @@ public class NumberRevision extends AppCompatActivity {
     private void nextQuestion(int i)
     {
 
-        char capital = (char) i;
-        char small = (char) (i+32);
-
-        mQuestion.setText(Character.toString(capital)+" "+Character.toString(small));
+        mQuestion.setText(Integer.toString(i));
     }
 
     private void voice(String text)
@@ -137,7 +130,7 @@ public class NumberRevision extends AppCompatActivity {
                 if(resultCode == RESULT_OK && null!=data)
                 {
                     ArrayList<String> result = data.getStringArrayListExtra(RecognizerIntent.EXTRA_RESULTS);
-                    String answer = mQuestion.getText().toString().substring(0,1);
+                    String answer = mQuestion.getText().toString();
                     if(result.get(0).equalsIgnoreCase(answer) || result.get(1).equalsIgnoreCase(answer)) {
                         voice("Correct");
                     }

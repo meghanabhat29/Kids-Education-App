@@ -87,13 +87,11 @@ public class SpeakAloudNumber extends AppCompatActivity {
         mTextTv.setText("RECORD");
         mNext.setVisibility(View.GONE);
 
-        String alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-        String fullalphabet = alphabet + alphabet.toLowerCase();
         Random random = new Random();
 
-        char code = fullalphabet.charAt(random.nextInt(51));
+        int i = random.nextInt(100);
 
-        mQuestion.setText(Character.toString(code));
+        mQuestion.setText(Integer.toString(i));
     }
 
     private void speak()
