@@ -145,7 +145,7 @@ public class PutInPlace extends AppCompatActivity {
     }
 
     private void generateQues() {
-        int randomInteger = new Random().nextInt(26) + 65;
+        int randomInteger = new Random().nextInt(21) + 65;
         startingAlphabet = (char) randomInteger;
         Character[] arr = { startingAlphabet, (char) (startingAlphabet+1), (char) (startingAlphabet + 2), (char) (startingAlphabet+3), (char) (startingAlphabet + 4), (char) (startingAlphabet+5)};
         shuffle(arr);

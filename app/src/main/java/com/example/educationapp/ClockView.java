@@ -1,17 +1,21 @@
 package com.example.educationapp;
 
 import android.content.Context;
+import android.content.SharedPreferences;
 import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Paint;
 import android.graphics.Rect;
+import android.icu.text.LocaleDisplayNames;
 import android.util.AttributeSet;
+import android.util.Log;
 import android.util.TypedValue;
 import android.view.View;
 
 import androidx.annotation.Nullable;
 
 import java.util.Calendar;
+import java.util.Random;
 
 public class ClockView extends View {
 
@@ -62,8 +66,8 @@ public class ClockView extends View {
         drawNumeral(canvas);
         drawHands(canvas);
 
-        postInvalidateDelayed(500);
-        invalidate();
+        //postInvalidateDelayed(500);
+        //invalidate();
     }
 
     private void drawHand(Canvas canvas,double loc,boolean isHour){
@@ -77,11 +81,19 @@ public class ClockView extends View {
 
     private void drawHands(Canvas canvas) {
         Calendar c=Calendar.getInstance();
-        float hour=c.get(Calendar.HOUR_OF_DAY);
-        hour = (hour > 12) ? (hour - 12) : hour;
-        drawHand(canvas,(hour+c.get(Calendar.MINUTE)/60)*5f,true);
-        drawHand(canvas,c.get(Calendar.MINUTE),false);
-        drawHand(canvas,c.get(Calendar.SECOND),false);
+        //float hour=c.get(Calendar.HOUR_OF_DAY);
+        int hour = new Random().nextInt(12);
+        float minute = new Random().nextInt(60);
+        minute = ((int) minute/5)*5;
+        Log.d("TIME", hour+":"+minute);
+        SharedPreferences pref = getContext().getSharedPreferences("MyPref", 0); // 0 - for private mode
+        SharedPreferences.Editor editor = pref.edit();
+        editor.putInt("hour", hour);
+        editor.putInt("minute", (int)minute);
+        editor.apply();
+        //hour = (hour > 12) ? (hour - 12) : hour;
+        drawHand(canvas,(hour+(minute+0.0)/60)*5f,true);
+        drawHand(canvas,minute,false);
     }
 
     private void drawNumeral(Canvas canvas) {

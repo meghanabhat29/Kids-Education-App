@@ -7,6 +7,7 @@
     tools:context=".TimeReading">
     
     <com.example.educationapp.ClockView
+        android:id="@+id/clock"
         android:layout_width="300dp"
         android:layout_height="300dp"
         android:layout_centerInParent="true"
