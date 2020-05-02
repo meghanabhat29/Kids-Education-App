@@ -80,7 +80,7 @@ public class NumberRevision extends AppCompatActivity {
                 mVoiceBtn.setVisibility(View.VISIBLE);
                 mSpeakBtn.setVisibility(View.VISIBLE);
                 mNext.setText("NEXT");
-                if(a==100 || mQuestion.getText().toString().equals("Hello"))
+                if(a==50 || mQuestion.getText().toString().equals("Hello"))
                     a=-1;
                 nextQuestion(++a);
             }

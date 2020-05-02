@@ -89,7 +89,7 @@ public class SpeakAloudNumber extends AppCompatActivity {
 
         Random random = new Random();
 
-        int i = random.nextInt(100);
+        int i = random.nextInt(51);
 
         mQuestion.setText(Integer.toString(i));
     }

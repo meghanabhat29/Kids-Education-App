@@ -19,7 +19,7 @@ public class PutInPlaceNumber extends AppCompatActivity {
 
     Button Option1, Option2, Option3, Option4, Option5, Option6, Reset, Submit;
     TextInputEditText Answer[] = new TextInputEditText[6];
-    char startingAlphabet='1';
+    int startingAlphabet=1;
     int clicks=0;
     @Override
     protected void onCreate(Bundle savedInstanceState)
@@ -118,7 +118,7 @@ public class PutInPlaceNumber extends AppCompatActivity {
 
                     for (int i = 0; i < 6; i++) {
 
-                        if (Answer[i].getText().toString().charAt(0) == startingAlphabet + i)
+                        if (Integer.parseInt(Answer[i].getText().toString()) == startingAlphabet + i)
                             continue;
                         else {
                             Toast.makeText(PutInPlaceNumber.this, "WRONG ANSWER, RETRY", Toast.LENGTH_SHORT).show();
@@ -145,9 +145,9 @@ public class PutInPlaceNumber extends AppCompatActivity {
     }
 
     private void generateQues() {
-        int randomInteger = new Random().nextInt(26) + 65;
-        startingAlphabet = (char) randomInteger;
-        Character[] arr = { startingAlphabet, (char) (startingAlphabet+1), (char) (startingAlphabet + 2), (char) (startingAlphabet+3), (char) (startingAlphabet + 4), (char) (startingAlphabet+5)};
+        int randomInteger = new Random().nextInt(45);
+        startingAlphabet = randomInteger;
+        Integer arr[] = { startingAlphabet, (startingAlphabet+1), (startingAlphabet + 2), (startingAlphabet+3), (startingAlphabet + 4), (startingAlphabet+5)};
         shuffle(arr);
 
         Option1 = findViewById(R.id.button2);
@@ -165,8 +165,8 @@ public class PutInPlaceNumber extends AppCompatActivity {
     }
 
 
-    private void shuffle(Character[] intArray) {
-        List<Character> intList = Arrays.asList(intArray);
+    private void shuffle(Integer[] intArray) {
+        List<Integer> intList = Arrays.asList(intArray);
         Collections.shuffle(intList);
         intList.toArray(intArray);
     }
