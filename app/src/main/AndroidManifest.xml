@@ -9,6 +9,11 @@
         android:roundIcon="@mipmap/kid_launcher"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <activity android:name=".NumberToWords2"></activity>
+        <activity android:name=".PutInPlaceNumber2" />
+        <activity android:name=".SpeakAloudNumber2" />
+        <activity android:name=".NumberRevision2" />
+        <activity android:name=".NumberDashboard2" />
         <activity android:name=".NumberToWords"></activity>
         <activity android:name=".PutInPlaceNumber" />
         <activity android:name=".SpeakAloudNumber" />

@@ -41,6 +41,13 @@ public class MainDashboard extends AppCompatActivity {
         startActivity(intent);
         //Toast.makeText(MainDashboard.this,"Under Development", Toast.LENGTH_SHORT).show();
     }
+
+    public void Numbersfn2(View view) {
+        Intent intent = new Intent(getApplicationContext(), NumberDashboard2.class);
+        startActivity(intent);
+        //Toast.makeText(MainDashboard.this,"Under Development", Toast.LENGTH_SHORT).show();
+    }
+
     public void AdvNumberFn(View view) {
         //Intent intent = new Intent(getApplicationContext(), Dashboard.class);
         //startActivity(intent);
