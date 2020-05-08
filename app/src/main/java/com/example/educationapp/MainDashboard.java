@@ -49,9 +49,9 @@ public class MainDashboard extends AppCompatActivity {
     }
 
     public void AdvNumberFn(View view) {
-        //Intent intent = new Intent(getApplicationContext(), Dashboard.class);
-        //startActivity(intent);
-        Toast.makeText(MainDashboard.this,"Under Development", Toast.LENGTH_SHORT).show();
+        Intent intent = new Intent(getApplicationContext(), NumberDashboard3.class);
+        startActivity(intent);
+        //Toast.makeText(MainDashboard.this,"Under Development", Toast.LENGTH_SHORT).show();
     }
     public void Timefn(View view) {
         Intent intent = new Intent(getApplicationContext(), TimeReading.class);
