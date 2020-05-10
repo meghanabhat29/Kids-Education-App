@@ -9,8 +9,10 @@
         android:roundIcon="@mipmap/kid_launcher"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".Name"/>
-        <activity android:name=".ForgotPassword"></activity>
+        <activity android:name=".Name">
+
+        </activity>
+        <activity android:name=".ForgotPassword"/>
         <activity android:name=".RegistrationPage" />
         <activity android:name=".ThingsActivity" />
         <activity android:name=".CategoriesActivity" />
