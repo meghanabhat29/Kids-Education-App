@@ -6,6 +6,42 @@
     android:layout_height="match_parent"
     tools:context=".LoginActivity">
 
+    <pl.droidsonroids.gif.GifImageView
+        android:layout_width="112dp"
+        android:layout_height="137dp"
+        android:layout_marginBottom="27dp"
+        android:src="@drawable/hi"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.044" />
+
+    <pl.droidsonroids.gif.GifImageView
+        android:layout_width="152dp"
+        android:layout_height="132dp"
+        android:layout_marginBottom="27dp"
+        android:src="@drawable/disney"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.844" />
+
+    <pl.droidsonroids.gif.GifImageView
+        android:layout_width="340dp"
+        android:layout_height="194dp"
+        android:layout_marginBottom="27dp"
+        android:src="@drawable/hello"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.492"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0" />
+
     <EditText
         android:id="@+id/email"
         android:layout_width="300dp"
@@ -105,8 +141,8 @@
         android:layout_height="wrap_content"
         android:fontFamily="@font/bold"
         android:text="Hello There"
-        android:textSize="40sp"
         android:textColor="@color/grey"
+        android:textSize="40sp"
         app:layout_constraintBottom_toTopOf="@+id/email"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.245"
