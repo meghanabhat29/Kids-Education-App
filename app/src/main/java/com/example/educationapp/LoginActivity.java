@@ -57,8 +57,8 @@ public class LoginActivity extends AppCompatActivity {
         Backbutton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent=new Intent(LoginActivity.this,Dashboard.class);
-                startActivity(intent);
+                //Intent intent=new Intent(LoginActivity.this,Dashboard.class);
+                //startActivity(intent);
             }
         });
 
