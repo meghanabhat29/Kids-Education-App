@@ -1,10 +1,7 @@
 package com.example.educationapp;
 
-import androidx.annotation.NonNull;
-import androidx.annotation.RequiresApi;
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Build;
 import android.os.Bundle;
 import android.text.TextUtils;
@@ -17,10 +14,19 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.annotation.NonNull;
+import androidx.annotation.RequiresApi;
+import androidx.appcompat.app.AppCompatActivity;
+
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.firestore.DocumentReference;
+import com.google.firebase.firestore.DocumentSnapshot;
+import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.firestore.QueryDocumentSnapshot;
+import com.google.firebase.firestore.QuerySnapshot;
 
 import java.util.Objects;
 
@@ -28,6 +34,7 @@ public class LoginActivity extends AppCompatActivity {
 
     ImageView Backbutton;
     private FirebaseAuth mAuth;
+    private FirebaseFirestore db;
     Button btn;
     EditText email;
     EditText password;
@@ -44,8 +51,18 @@ public class LoginActivity extends AppCompatActivity {
 
         mAuth = FirebaseAuth.getInstance();
         if (mAuth.getCurrentUser()!=null){
-            String uid = mAuth.getCurrentUser().getUid();
-            Intent intent = new Intent(getApplicationContext(), MainDashboard.class);
+
+            //String uid = mAuth.getCurrentUser().getUid(); Store in shared prefernce to optimize
+
+            //getName();
+            SharedPreferences pref = getApplicationContext().getSharedPreferences("MyPref", 0);
+            Intent intent;
+            if (pref.getString("name","")!="") {
+                intent = new Intent(getApplicationContext(), MainDashboard.class);
+            }
+            else {
+                intent = new Intent(getApplicationContext(), Name.class);
+            }
             intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
             startActivity(intent);
             finish();
@@ -140,4 +157,38 @@ public class LoginActivity extends AppCompatActivity {
                     }
                 });
     }
+
+//    void getName() {
+//        initFirestore();
+//        db.collection("users")
+//                .document(mAuth.getCurrentUser().getUid())
+//                .get()
+//                .addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
+//                    @Override
+//                    public void onComplete(@NonNull Task<DocumentSnapshot> task) {
+//                        if (task.isSuccessful()) {
+//                            if (task.getResult().getData().get("Name")!=null) {
+//                                Intent intent;
+//                                intent = new Intent(getApplicationContext(), MainDashboard.class);
+//                                intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+//                                startActivity(intent);
+//                                finish();
+//                            }
+//                            Log.d("NAME EXISTS","Success",task.getException());
+//                        } else {
+//                            Intent intent;
+//                            intent = new Intent(getApplicationContext(), Name.class);
+//                            intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+//                            startActivity(intent);
+//                            finish();
+//                            Log.d("NAME DOES NOT EXIST","FAILURE",task.getException());
+//                        }
+//                    }
+//                });
+//
+//    }
+//
+//    private void initFirestore() {
+//        db = FirebaseFirestore.getInstance();
+//    }
 }
