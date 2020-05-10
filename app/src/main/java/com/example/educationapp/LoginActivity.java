@@ -4,7 +4,6 @@ import androidx.annotation.NonNull;
 import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
@@ -15,6 +14,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -31,6 +31,7 @@ public class LoginActivity extends AppCompatActivity {
     Button btn;
     EditText email;
     EditText password;
+    TextView registration;
     String TAG;
 
     @Override
@@ -51,8 +52,9 @@ public class LoginActivity extends AppCompatActivity {
 
         Backbutton=findViewById(R.id.backBtn);
         btn = findViewById(R.id.button);
-        email = findViewById(R.id.editText);
-        password = findViewById(R.id.editText2);
+        email = findViewById(R.id.email);
+        password = findViewById(R.id.passwd);
+        registration = findViewById(R.id.register);
 
         Backbutton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -61,6 +63,15 @@ public class LoginActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+
+        registration.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent=new Intent(LoginActivity.this,RegistrationPage.class);
+                startActivity(intent);
+            }
+        });
+
 
         btn.setOnClickListener(new View.OnClickListener() {
             @Override
