@@ -43,7 +43,7 @@ public class RegistrationPage extends AppCompatActivity {
 
         mAuth = FirebaseAuth.getInstance();
         if (mAuth.getCurrentUser()!=null){
-            Intent intent = new Intent(getApplicationContext(), MainDashboard.class);
+            Intent intent = new Intent(getApplicationContext(), Name.class);
             intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
             startActivity(intent);
             finish();
@@ -131,7 +131,7 @@ public class RegistrationPage extends AppCompatActivity {
                         progressDialog.dismiss();
                         if (task.isSuccessful()) {
                             Toast.makeText(RegistrationPage.this, "Woo-hoo! Successfully registered", Toast.LENGTH_SHORT).show();
-                            Intent intent = new Intent(getApplicationContext(), MainDashboard.class);
+                            Intent intent = new Intent(getApplicationContext(), Name.class);
                             startActivity(intent);
                             finish();
                         } else {
