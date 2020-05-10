@@ -32,6 +32,7 @@ public class LoginActivity extends AppCompatActivity {
     EditText email;
     EditText password;
     TextView registration;
+    TextView Forgotpasswd;
     String TAG;
 
     @Override
@@ -55,6 +56,8 @@ public class LoginActivity extends AppCompatActivity {
         email = findViewById(R.id.email);
         password = findViewById(R.id.passwd);
         registration = findViewById(R.id.register);
+        Forgotpasswd = findViewById(R.id.forgotpasswd);
+
 
         Backbutton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -68,6 +71,14 @@ public class LoginActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent=new Intent(LoginActivity.this,RegistrationPage.class);
+                startActivity(intent);
+            }
+        });
+
+        Forgotpasswd.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent=new Intent(LoginActivity.this,ForgotPassword.class);
                 startActivity(intent);
             }
         });
