@@ -22,9 +22,18 @@
     <EditText
         android:id="@+id/editText3"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_height="60dp"
+        android:layout_below="@+id/clock"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="100dp"
+        android:layout_marginTop="-198dp"
+        android:layout_marginEnd="98dp"
+        android:layout_marginBottom="137dp"
         android:ems="10"
-        android:inputType="time" />
+        android:inputType="time"
+        android:selectAllOnFocus="false" />
 
 
 </RelativeLayout>
