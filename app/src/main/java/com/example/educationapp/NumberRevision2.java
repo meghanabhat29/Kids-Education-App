@@ -11,6 +11,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -22,10 +23,22 @@ public class NumberRevision2 extends AppCompatActivity {
     ImageButton mSpeakBtn, mVoiceBtn;
     TextView mQuestion;
     Button mNext;
+    ImageView ImgQuestion;
     private TextToSpeech mTTS;
     private static final int REQUEST_CODE_SPEECH_INPUT = 1000;
     static int a = 50;
-
+    int[] numberImages= {
+                R.drawable.n51, R.drawable.n52, R.drawable.n53, R.drawable.n54, R.drawable.n55,
+                R.drawable.n56, R.drawable.n57, R.drawable.n58, R.drawable.n59, R.drawable.n60,
+                R.drawable.n61, R.drawable.n62, R.drawable.n63, R.drawable.n64, R.drawable.n65,
+                R.drawable.n66, R.drawable.n67, R.drawable.n68, R.drawable.n69, R.drawable.n70,
+                R.drawable.n71, R.drawable.n72, R.drawable.n73, R.drawable.n74, R.drawable.n75,
+                R.drawable.n76, R.drawable.n77, R.drawable.n78, R.drawable.n79, R.drawable.n80,
+                R.drawable.n81, R.drawable.n82, R.drawable.n83, R.drawable.n84, R.drawable.n85,
+                R.drawable.n86, R.drawable.n87, R.drawable.n88, R.drawable.n89, R.drawable.n90,
+                R.drawable.n91, R.drawable.n92, R.drawable.n93, R.drawable.n94, R.drawable.n95,
+                R.drawable.n96, R.drawable.n97, R.drawable.n98, R.drawable.n99, R.drawable.n100
+                        };
     @Override
     protected void onCreate(Bundle savedInstanceState)
     {
@@ -36,6 +49,8 @@ public class NumberRevision2 extends AppCompatActivity {
         mVoiceBtn = findViewById(R.id.micBtn);
         mNext = findViewById(R.id.buttonNext);
         mSpeakBtn = findViewById(R.id.imageViewSpeak);
+        ImgQuestion = findViewById(R.id.imageViewNumber);
+
 
         mTTS = new TextToSpeech(this, new TextToSpeech.OnInitListener() {
             @Override
@@ -92,6 +107,7 @@ public class NumberRevision2 extends AppCompatActivity {
     {
 
         mQuestion.setText(Integer.toString(i));
+        ImgQuestion.setImageResource(numberImages[i-51]);
     }
 
     private void voice(String text)
