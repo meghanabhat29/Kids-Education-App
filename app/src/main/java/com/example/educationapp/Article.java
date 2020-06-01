@@ -11,6 +11,7 @@ import android.os.Bundle;
 import android.os.CountDownTimer;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -20,6 +21,14 @@ public class Article extends AppCompatActivity {
 
     Button Option1, Option2;
     TextView Question;
+    ImageView ImgQuestion;
+    int check=0;
+    final int[] articleImages = {R.drawable.apple_article, R.drawable.bat_article, R.drawable.car_article,
+            R.drawable.chair_article, R.drawable.egg_article, R.drawable.elephant_article,
+            R.drawable.icecream, R.drawable.ostrich_article, R.drawable.owl_article,
+            R.drawable.umbrella_article};
+    final String[] articleQuestions = {"apple", "bat", "car", "chair", "egg", "elephant", "ice cream",
+            "ostrich", "owl", "umbrella"};
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,6 +45,9 @@ public class Article extends AppCompatActivity {
 //        Option1.setBackground(buttonDrawable1);
 
 
+
+
+
         setOnclick();
 
     }
@@ -44,6 +56,8 @@ public class Article extends AppCompatActivity {
         Option1 = findViewById(R.id.button2);
         Option2 = findViewById(R.id.button4);
         Question = findViewById(R.id.textView2);
+        ImgQuestion = findViewById(R.id.imageViewArticle);
+
 
         final char startingAlphabet = Question.getText().toString().charAt(0);
 
@@ -52,6 +66,7 @@ public class Article extends AppCompatActivity {
                 @Override
                 public void onClick(View v)
                 {
+
                     Drawable buttonDrawable1 = Option1.getBackground();
                     buttonDrawable1 = DrawableCompat.wrap(buttonDrawable1);
                     DrawableCompat.setTint(buttonDrawable1 , Color.RED);
@@ -159,12 +174,17 @@ public class Article extends AppCompatActivity {
         Option2 = findViewById(R.id.button4);
         Question = findViewById(R.id.textView2);
 
-        Question.setText("next_text");
+        check++;
+        ImgQuestion.setImageResource(articleImages[check%articleImages.length]);
+        Question.setText(articleQuestions[check%articleQuestions.length]);
+
+        //Question.setText("next_text");
         Drawable buttonDrawable1 = Option1.getBackground();
         buttonDrawable1 = DrawableCompat.wrap(buttonDrawable1);
         DrawableCompat.setTint(buttonDrawable1, Color.WHITE);
         Option1.setBackground(buttonDrawable1);
         Option2.setBackground(buttonDrawable1);
+
         setOnclick();
 
     }
