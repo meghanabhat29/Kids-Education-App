@@ -14,6 +14,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -27,11 +28,24 @@ public class SpeakAloudNumber2 extends AppCompatActivity {
     TextView mTextTv;
     ImageButton mVoiceBtn;
     TextView mQuestion;
-    Button mNext;
+    ImageButton mNext;
     private TextToSpeech mTTS;
     private static final int REQUEST_CODE_SPEECH_INPUT = 1000;
     ConstraintLayout status1;
+    ImageView ImgQuestion;
     ConstraintLayout status2;
+    int[] numberImages= {
+            R.drawable.n51, R.drawable.n52, R.drawable.n53, R.drawable.n54, R.drawable.n55,
+            R.drawable.n56, R.drawable.n57, R.drawable.n58, R.drawable.n59, R.drawable.n60,
+            R.drawable.n61, R.drawable.n62, R.drawable.n63, R.drawable.n64, R.drawable.n65,
+            R.drawable.n66, R.drawable.n67, R.drawable.n68, R.drawable.n69, R.drawable.n70,
+            R.drawable.n71, R.drawable.n72, R.drawable.n73, R.drawable.n74, R.drawable.n75,
+            R.drawable.n76, R.drawable.n77, R.drawable.n78, R.drawable.n79, R.drawable.n80,
+            R.drawable.n81, R.drawable.n82, R.drawable.n83, R.drawable.n84, R.drawable.n85,
+            R.drawable.n86, R.drawable.n87, R.drawable.n88, R.drawable.n89, R.drawable.n90,
+            R.drawable.n91, R.drawable.n92, R.drawable.n93, R.drawable.n94, R.drawable.n95,
+            R.drawable.n96, R.drawable.n97, R.drawable.n98, R.drawable.n99, R.drawable.n100
+    };
 
     @Override
     protected void onCreate(Bundle savedInstanceState)
@@ -41,10 +55,12 @@ public class SpeakAloudNumber2 extends AppCompatActivity {
         mTextTv = findViewById(R.id.textTv);
         mVoiceBtn = findViewById(R.id.micBtn);
         mQuestion = findViewById(R.id.textViewQuestion);
-        mNext = findViewById(R.id.buttonNext);
+        mNext = findViewById(R.id.nextButton);
         status1 = findViewById(R.id.correct);
         status2 = findViewById(R.id.wrong);
+        ImgQuestion = findViewById(R.id.imageViewNum);
         nextQuestion();
+
 
         mTTS = new TextToSpeech(this, new TextToSpeech.OnInitListener() {
             @Override
@@ -93,6 +109,7 @@ public class SpeakAloudNumber2 extends AppCompatActivity {
         int i = random.nextInt(51) +50;
 
         mQuestion.setText(Integer.toString(i));
+        ImgQuestion.setImageResource(numberImages[i-51]);
     }
 
     private void speak()

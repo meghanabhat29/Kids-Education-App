@@ -34,12 +34,23 @@
                 android:textAlignment="center"
                 android:textColor="#000000"
                 android:textSize="100sp"
+                android:visibility="invisible"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.411"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintVertical_bias="0.503" />
+
+            <ImageView
+                android:id="@+id/imageViewNum"
+                android:layout_width="310dp"
+                android:layout_height="183dp"
+                app:layout_constraintBottom_toBottomOf="@+id/textViewQuestion"
+                app:layout_constraintEnd_toEndOf="@+id/textViewQuestion"
+                app:layout_constraintStart_toStartOf="@+id/textViewQuestion"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/n0" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -92,20 +103,6 @@
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintVertical_bias="0.492" />
 
-            <Button
-                android:id="@+id/buttonNext"
-                android:layout_width="100dp"
-                android:layout_height="match_parent"
-                android:background="@color/white"
-                android:fontFamily="@font/regular"
-                android:padding="10sp"
-                android:text="Next"
-                android:textAllCaps="false"
-                android:textColor="@color/white"
-                android:textSize="20sp"
-                android:visibility="visible"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toEndOf="@+id/textView8" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -135,5 +132,19 @@
 
 
     </FrameLayout>
+
+    <ImageButton
+        android:id="@+id/nextButton"
+        android:layout_width="218dp"
+        android:layout_height="115dp"
+        android:layout_marginTop="40dp"
+
+
+        android:background="@drawable/next"
+        app:layout_constraintBottom_toTopOf="@+id/frameLayout2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/micBtn" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
