@@ -8,15 +8,18 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Toast;
 
+import com.example.educationapp.MyService;
+
 public class MainDashboard extends AppCompatActivity {
 
     CardView cAlphabets, cOneMany, cNumber1, cNumber2, cTime, cArticle, cWords;
+    private Intent serviceIntent;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main_dashboard);
-
-
+        serviceIntent = new Intent(getApplicationContext(), MyService.class);
+        startService(serviceIntent);
     }
     public void Alphabetfn(View view) {
         Intent intent = new Intent(getApplicationContext(), Dashboard.class);
