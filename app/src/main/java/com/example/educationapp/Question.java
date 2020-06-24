@@ -143,23 +143,25 @@ public class Question extends AppCompatActivity {
                 {
                     ArrayList<String> result = data.getStringArrayListExtra(RecognizerIntent.EXTRA_RESULTS);
                     String answer = mQuestion.getText().toString();
-                    if(result.get(0).equalsIgnoreCase(answer) || result.get(1).equalsIgnoreCase(answer)) {
-                        status2.setVisibility(View.GONE);
-                        status1.setVisibility(View.VISIBLE);
-                        mTextTv.setText("Correct Answer!");
-                        mNext.setVisibility(View.VISIBLE);
-                    }
-                    else {
-                        mTextTv.setText("Incorrect! Retry");
-                        status1.setVisibility(View.GONE);
-                        status2.setVisibility(View.VISIBLE);
+                        if (result.get(0).equalsIgnoreCase(answer) || result.get(0).contains(answer) ||
+                                result.get(0).contains(answer.toLowerCase()))
+                        {
+                            status2.setVisibility(View.GONE);
+                            status1.setVisibility(View.VISIBLE);
+                            mTextTv.setText("Correct Answer!");
+                            mNext.setVisibility(View.VISIBLE);
+                        }
+                        else
+                            {
+                            mTextTv.setText("Incorrect! Retry");
+                            status1.setVisibility(View.GONE);
+                            status2.setVisibility(View.VISIBLE);
+                            }
 
-                    }
+                }
                     voice(mTextTv.getText().toString());
                 }
                 break;
-
-            }
 
 
             default:

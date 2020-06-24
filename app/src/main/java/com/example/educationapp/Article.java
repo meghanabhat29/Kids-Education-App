@@ -6,6 +6,7 @@ import androidx.core.graphics.drawable.DrawableCompat;
 import android.content.Intent;
 import android.content.res.ColorStateList;
 import android.graphics.Color;
+import android.graphics.drawable.AnimationDrawable;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.os.CountDownTimer;
@@ -21,7 +22,7 @@ public class Article extends AppCompatActivity {
 
     Button Option1, Option2;
     TextView Question;
-    ImageView ImgQuestion;
+    ImageView ImgQuestion, ImgAnimation;
     int check=0;
     final int[] articleImages = {R.drawable.apple_article, R.drawable.bat_article, R.drawable.car_article,
             R.drawable.chair_article, R.drawable.egg_article, R.drawable.elephant_article,
@@ -57,6 +58,7 @@ public class Article extends AppCompatActivity {
         Option2 = findViewById(R.id.button4);
         Question = findViewById(R.id.textView2);
         ImgQuestion = findViewById(R.id.imageViewArticle);
+        ImgAnimation = findViewById(R.id.imageViewAnimator);
 
 
         final char startingAlphabet = Question.getText().toString().charAt(0);
@@ -73,7 +75,6 @@ public class Article extends AppCompatActivity {
                     Option1.setBackground(buttonDrawable1 );
                     DrawableCompat.setTint(buttonDrawable1 , Color.GREEN);
                     Option2.setBackground(buttonDrawable1 );
-                    Toast.makeText(Article.this, "WRONG ANSWER", Toast.LENGTH_SHORT).show();
                     new CountDownTimer(1000, 1) {
                         public void onFinish() {
                             nextQuestion();
@@ -83,6 +84,7 @@ public class Article extends AppCompatActivity {
                             // millisUntilFinished    The amount of time until finished.
                         }
                     }.start();
+                    WrongAnimation();
                 }
             });
 
@@ -96,7 +98,7 @@ public class Article extends AppCompatActivity {
                     Option1.setBackground(buttonDrawable1 );
                     DrawableCompat.setTint(buttonDrawable1 , Color.GREEN);
                     Option2.setBackground(buttonDrawable1 );
-                    Toast.makeText(Article.this, "CORRECT ANSWER", Toast.LENGTH_SHORT).show();
+
                     new CountDownTimer(1000, 1) {
                         public void onFinish() {
                             nextQuestion();
@@ -106,6 +108,9 @@ public class Article extends AppCompatActivity {
                             // millisUntilFinished    The amount of time until finished.
                         }
                     }.start();
+                    CorrectAnimation();
+
+
                 }
             });
         }
@@ -120,7 +125,7 @@ public class Article extends AppCompatActivity {
                     Option1.setBackground(buttonDrawable1 );
                     DrawableCompat.setTint(buttonDrawable1 , Color.RED);
                     Option2.setBackground(buttonDrawable1 );
-                    Toast.makeText(Article.this, "CORRECT ANSWER", Toast.LENGTH_SHORT).show();
+
                     new CountDownTimer(1000, 1) {
                         public void onFinish() {
                             nextQuestion();
@@ -130,6 +135,8 @@ public class Article extends AppCompatActivity {
                             // millisUntilFinished    The amount of time until finished.
                         }
                     }.start();
+                    CorrectAnimation();
+
                 }
             });
 
@@ -143,7 +150,6 @@ public class Article extends AppCompatActivity {
                     Option1.setBackground(buttonDrawable1 );
                     DrawableCompat.setTint(buttonDrawable1 , Color.RED);
                     Option2.setBackground(buttonDrawable1 );
-                    Toast.makeText(Article.this, "WRONG ANSWER", Toast.LENGTH_SHORT).show();
                     new CountDownTimer(1000, 1) {
                         public void onFinish() {
                             nextQuestion();
@@ -153,11 +159,27 @@ public class Article extends AppCompatActivity {
                             // millisUntilFinished    The amount of time until finished.
                         }
                     }.start();
+                    WrongAnimation();
                 }
             });
         }
     }
 
+    public void CorrectAnimation()
+    {
+        ImgAnimation.setVisibility(View.VISIBLE);
+        ImgAnimation.setImageResource(R.drawable.correctanimation);
+        final AnimationDrawable correctAnimation = (AnimationDrawable) ImgAnimation.getDrawable();
+        correctAnimation.start();
+    }
+
+    public void WrongAnimation()
+    {
+        ImgAnimation.setVisibility(View.VISIBLE);
+        ImgAnimation.setImageResource(R.drawable.wronganimation);
+        final AnimationDrawable wrongAnimation = (AnimationDrawable) ImgAnimation.getDrawable();
+        wrongAnimation.start();
+    }
     private boolean isVowel(char c) {
         if (c=='a'|| c=='e'|| c=='i'|| c=='o'||c=='u')
             return true;

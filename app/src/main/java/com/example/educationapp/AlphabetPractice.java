@@ -137,12 +137,15 @@ public class AlphabetPractice extends AppCompatActivity {
                 if(resultCode == RESULT_OK && null!=data)
                 {
                     ArrayList<String> result = data.getStringArrayListExtra(RecognizerIntent.EXTRA_RESULTS);
-                    String answer = mQuestion.getText().toString().substring(0,1);
-                    if(result.get(0).equalsIgnoreCase(answer) || result.get(1).equalsIgnoreCase(answer)) {
+                    String answer = mQuestion.getText().toString().substring(2);
+                    if(result.get(0).equalsIgnoreCase(answer) || result.get(0).contains(answer))
+                    {
                         voice("Correct");
                     }
                     else {
                         voice("Incorrect");
+                        Toast.makeText(this, ""+result.get(0), Toast.LENGTH_SHORT).show();
+
                     }
                 }
                 break;

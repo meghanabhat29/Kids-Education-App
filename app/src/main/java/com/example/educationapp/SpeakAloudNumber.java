@@ -159,7 +159,7 @@ public class SpeakAloudNumber extends AppCompatActivity {
                 {
                     ArrayList<String> result = data.getStringArrayListExtra(RecognizerIntent.EXTRA_RESULTS);
                     String answer = mQuestion.getText().toString();
-                    if(result.get(0).equalsIgnoreCase(answer) || result.get(1).equalsIgnoreCase(answer)) {
+                    if(result.get(0).equalsIgnoreCase(answer)) {
                         status2.setVisibility(View.GONE);
                         status1.setVisibility(View.VISIBLE);
                         mTextTv.setText("Correct Answer!");
