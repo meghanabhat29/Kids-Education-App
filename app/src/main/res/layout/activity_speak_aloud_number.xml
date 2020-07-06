@@ -62,7 +62,7 @@
         android:id="@+id/micBtn"
         android:layout_width="243dp"
         android:layout_height="81dp"
-        android:layout_marginBottom="188dp"
+        android:layout_marginBottom="224dp"
         android:layout_marginTop="20dp"
         android:background="@drawable/button"
         app:layout_constraintBottom_toTopOf="@+id/frameLayout2"
@@ -109,9 +109,21 @@
         <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/correct"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="76dp"
             android:background="#9ACD32"
             android:visibility="visible">
+
+            <ImageButton
+                android:id="@+id/nextButton"
+                android:layout_width="118dp"
+                android:layout_height="72dp"
+
+
+                android:background="@drawable/next"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/textTv"
+                app:layout_constraintTop_toTopOf="parent" />
 
             <TextView
                 android:id="@+id/textTv"
@@ -128,23 +140,20 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintVertical_bias="0.492" />
-        </androidx.constraintlayout.widget.ConstraintLayout>
 
+        </androidx.constraintlayout.widget.ConstraintLayout>
 
     </FrameLayout>
 
-    <ImageButton
-        android:id="@+id/nextButton"
-        android:layout_width="218dp"
-        android:layout_height="115dp"
-        android:layout_marginTop="40dp"
-
-
-        android:background="@drawable/next"
+    <ImageView
+        android:id="@+id/imageViewSAnimator"
+        android:layout_width="409dp"
+        android:layout_height="188dp"
         app:layout_constraintBottom_toTopOf="@+id/frameLayout2"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/micBtn" />
+        app:layout_constraintTop_toBottomOf="@+id/micBtn"
+        app:srcCompat="@drawable/correct_00000" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

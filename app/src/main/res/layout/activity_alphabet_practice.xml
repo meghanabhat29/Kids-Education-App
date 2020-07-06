@@ -34,12 +34,34 @@
                 android:textAlignment="center"
                 android:textColor="#000000"
                 android:textSize="100sp"
+                android:visibility="invisible"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintVertical_bias="1.0" />
+
+            <ImageView
+                android:id="@+id/imageViewAlphabet"
+                android:layout_width="133dp"
+                android:layout_height="173dp"
+                app:layout_constraintBottom_toBottomOf="@+id/textViewQuestion"
+                app:layout_constraintEnd_toEndOf="@+id/textViewQuestion"
+                app:layout_constraintHorizontal_bias="0.091"
+                app:layout_constraintStart_toStartOf="@+id/textViewQuestion"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/a" />
+
+            <ImageView
+                android:id="@+id/imageViewSmallPractice"
+                android:layout_width="141dp"
+                android:layout_height="179dp"
+                app:layout_constraintBottom_toBottomOf="@+id/textViewQuestion"
+                app:layout_constraintEnd_toEndOf="@+id/textViewQuestion"
+                app:layout_constraintStart_toEndOf="@+id/imageViewAlphabet"
+                app:layout_constraintTop_toTopOf="@+id/textViewQuestion"
+                app:srcCompat="@drawable/sa" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -53,13 +75,12 @@
         android:layout_height="83dp"
         android:layout_marginTop="48dp"
         android:background="@drawable/button"
+        android:visibility="invisible"
         app:layout_constraintBottom_toTopOf="@+id/frameLayout2"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.494"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/frameLayout"
-        app:layout_constraintVertical_bias="0.108"
-        android:visibility="invisible"
+        app:layout_constraintVertical_bias="0.257"
         app:srcCompat="@drawable/speak" />
 
     <ImageButton
@@ -69,12 +90,12 @@
         android:layout_marginBottom="188dp"
         android:layout_marginTop="20dp"
         android:background="@drawable/button"
+        android:visibility="invisible"
         app:layout_constraintBottom_toTopOf="@+id/frameLayout2"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageViewSpeak"
         app:layout_constraintVertical_bias="0.0"
-        android:visibility="invisible"
         app:srcCompat="@drawable/mic" />
 
     <FrameLayout
@@ -111,8 +132,7 @@
         </androidx.constraintlayout.widget.ConstraintLayout>
 
 
-
-
     </FrameLayout>
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

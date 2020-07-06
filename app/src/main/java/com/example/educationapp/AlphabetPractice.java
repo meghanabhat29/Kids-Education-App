@@ -11,6 +11,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -22,9 +23,26 @@ public class AlphabetPractice extends AppCompatActivity {
     ImageButton mSpeakBtn, mVoiceBtn;
     TextView mQuestion;
     Button mNext;
+    ImageView capitalImage, smallImage;
     private TextToSpeech mTTS;
     private static final int REQUEST_CODE_SPEECH_INPUT = 1000;
     static int a = 65;
+
+    int[] capitalLetters= { R.drawable.a,
+            R.drawable.b, R.drawable.c, R.drawable.d, R.drawable.e, R.drawable.f,
+            R.drawable.g, R.drawable.h, R.drawable.i, R.drawable.j, R.drawable.k,
+            R.drawable.l, R.drawable.m, R.drawable.n, R.drawable.o, R.drawable.p,
+            R.drawable.q, R.drawable.r, R.drawable.s, R.drawable.t, R.drawable.u,
+            R.drawable.v, R.drawable.w, R.drawable.x, R.drawable.y, R.drawable.z,
+    };
+
+    int[] smallLetters= { R.drawable.sa,
+            R.drawable.sb, R.drawable.sc, R.drawable.sd, R.drawable.se, R.drawable.sf,
+            R.drawable.sg, R.drawable.sh, R.drawable.si, R.drawable.sj, R.drawable.sk,
+            R.drawable.sl, R.drawable.sm, R.drawable.sn, R.drawable.so, R.drawable.sp,
+            R.drawable.sq, R.drawable.sr, R.drawable.ss, R.drawable.st, R.drawable.su,
+            R.drawable.sv, R.drawable.sw, R.drawable.sx, R.drawable.sy, R.drawable.sz,
+    };
 
     @Override
     protected void onCreate(Bundle savedInstanceState)
@@ -36,6 +54,8 @@ public class AlphabetPractice extends AppCompatActivity {
         mVoiceBtn = findViewById(R.id.micBtn);
         mNext = findViewById(R.id.buttonNext);
         mSpeakBtn = findViewById(R.id.imageViewSpeak);
+        capitalImage = findViewById(R.id.imageViewAlphabet);
+        smallImage = findViewById(R.id.imageViewSmallPractice);
 
         mTTS = new TextToSpeech(this, new TextToSpeech.OnInitListener() {
             @Override
@@ -99,6 +119,8 @@ public class AlphabetPractice extends AppCompatActivity {
         char small = (char) (i+32);
 
         mQuestion.setText(Character.toString(capital)+" "+Character.toString(small));
+        capitalImage.setImageResource(capitalLetters[i-65]);
+        smallImage.setImageResource(smallLetters[i-65]);
     }
 
     private void voice(String text)

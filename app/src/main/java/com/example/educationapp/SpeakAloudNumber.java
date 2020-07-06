@@ -6,6 +6,7 @@ import androidx.constraintlayout.widget.ConstraintLayout;
 
 import android.content.Intent;
 import android.graphics.Color;
+import android.graphics.drawable.AnimationDrawable;
 import android.os.Bundle;
 import android.speech.RecognizerIntent;
 import android.speech.tts.TextToSpeech;
@@ -27,7 +28,7 @@ import java.util.Random;
 public class SpeakAloudNumber extends AppCompatActivity {
     TextView mTextTv;
     ImageButton mVoiceBtn;
-    ImageView ImgQuestion;
+    ImageView ImgQuestion,ImgAnimation;
     TextView mQuestion;
     ImageButton mNext;
     private TextToSpeech mTTS;
@@ -55,6 +56,7 @@ public class SpeakAloudNumber extends AppCompatActivity {
         setContentView(R.layout.activity_speak_aloud_number);
         mTextTv = findViewById(R.id.textTv);
         mVoiceBtn = findViewById(R.id.micBtn);
+        ImgAnimation = findViewById(R.id.imageViewSAnimator);
         mQuestion = findViewById(R.id.textViewQuestion);
         mNext = findViewById(R.id.nextButton);
         status1 = findViewById(R.id.correct);
@@ -138,6 +140,22 @@ public class SpeakAloudNumber extends AppCompatActivity {
         mTTS.speak(text, TextToSpeech.QUEUE_FLUSH, null);
     }
 
+    public void CorrectAnimation()
+    {
+        ImgAnimation.setVisibility(View.VISIBLE);
+        ImgAnimation.setImageResource(R.drawable.correctanimation);
+        final AnimationDrawable correctAnimation = (AnimationDrawable) ImgAnimation.getDrawable();
+        correctAnimation.start();
+    }
+
+    public void WrongAnimation()
+    {
+        ImgAnimation.setVisibility(View.VISIBLE);
+        ImgAnimation.setImageResource(R.drawable.wronganimation);
+        final AnimationDrawable wrongAnimation = (AnimationDrawable) ImgAnimation.getDrawable();
+        wrongAnimation.start();
+    }
+
     @Override
     protected void onDestroy()
     {
@@ -164,12 +182,14 @@ public class SpeakAloudNumber extends AppCompatActivity {
                         status1.setVisibility(View.VISIBLE);
                         mTextTv.setText("Correct Answer!");
                         mNext.setVisibility(View.VISIBLE);
+                        CorrectAnimation();
                     }
                     else {
                         mTextTv.setText("Incorrect! Retry");
                         status1.setVisibility(View.GONE);
                         status2.setVisibility(View.VISIBLE);
-
+                        mNext.setVisibility(View.VISIBLE);
+                        WrongAnimation();
                     }
                     voice(mTextTv.getText().toString());
                 }

@@ -6,6 +6,7 @@ import androidx.constraintlayout.widget.ConstraintLayout;
 
 import android.content.Intent;
 import android.graphics.Color;
+import android.graphics.drawable.AnimationDrawable;
 import android.os.Bundle;
 import android.speech.RecognizerIntent;
 import android.speech.tts.TextToSpeech;
@@ -32,7 +33,7 @@ public class SpeakAloudNumber2 extends AppCompatActivity {
     private TextToSpeech mTTS;
     private static final int REQUEST_CODE_SPEECH_INPUT = 1000;
     ConstraintLayout status1;
-    ImageView ImgQuestion;
+    ImageView ImgQuestion, ImgAnimation;
     ConstraintLayout status2;
     int[] numberImages= {
             R.drawable.n51, R.drawable.n52, R.drawable.n53, R.drawable.n54, R.drawable.n55,
@@ -55,6 +56,7 @@ public class SpeakAloudNumber2 extends AppCompatActivity {
         mTextTv = findViewById(R.id.textTv);
         mVoiceBtn = findViewById(R.id.micBtn);
         mQuestion = findViewById(R.id.textViewQuestion);
+        ImgAnimation = findViewById(R.id.imageViewSAnimator);
         mNext = findViewById(R.id.nextButton);
         status1 = findViewById(R.id.correct);
         status2 = findViewById(R.id.wrong);
@@ -138,6 +140,22 @@ public class SpeakAloudNumber2 extends AppCompatActivity {
         mTTS.speak(text, TextToSpeech.QUEUE_FLUSH, null);
     }
 
+    public void CorrectAnimation()
+    {
+        ImgAnimation.setVisibility(View.VISIBLE);
+        ImgAnimation.setImageResource(R.drawable.correctanimation);
+        final AnimationDrawable correctAnimation = (AnimationDrawable) ImgAnimation.getDrawable();
+        correctAnimation.start();
+    }
+
+    public void WrongAnimation()
+    {
+        ImgAnimation.setVisibility(View.VISIBLE);
+        ImgAnimation.setImageResource(R.drawable.wronganimation);
+        final AnimationDrawable wrongAnimation = (AnimationDrawable) ImgAnimation.getDrawable();
+        wrongAnimation.start();
+    }
+
     @Override
     protected void onDestroy()
     {
@@ -159,17 +177,18 @@ public class SpeakAloudNumber2 extends AppCompatActivity {
                 {
                     ArrayList<String> result = data.getStringArrayListExtra(RecognizerIntent.EXTRA_RESULTS);
                     String answer = mQuestion.getText().toString();
-                    if(result.get(0).equalsIgnoreCase(answer) || result.get(1).equalsIgnoreCase(answer)) {
+                    if(result.get(0).equalsIgnoreCase(answer)) {
                         status2.setVisibility(View.GONE);
                         status1.setVisibility(View.VISIBLE);
                         mTextTv.setText("Correct Answer!");
                         mNext.setVisibility(View.VISIBLE);
+                        CorrectAnimation();
                     }
                     else {
                         mTextTv.setText("Incorrect! Retry");
                         status1.setVisibility(View.GONE);
                         status2.setVisibility(View.VISIBLE);
-
+                        WrongAnimation();
                     }
                     voice(mTextTv.getText().toString());
                 }

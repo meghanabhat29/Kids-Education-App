@@ -6,6 +6,7 @@ import androidx.constraintlayout.widget.ConstraintLayout;
 
 import android.content.Intent;
 import android.graphics.Color;
+import android.graphics.drawable.AnimationDrawable;
 import android.os.Bundle;
 import android.speech.RecognizerIntent;
 import android.speech.tts.TextToSpeech;
@@ -14,6 +15,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -28,10 +30,27 @@ public class Question extends AppCompatActivity {
     ImageButton mVoiceBtn;
     TextView mQuestion;
     Button mNext;
+    ImageView QuestionImage, ImgAnimation;
     private TextToSpeech mTTS;
     private static final int REQUEST_CODE_SPEECH_INPUT = 1000;
     ConstraintLayout status1;
     ConstraintLayout status2;
+
+    int[] capitalLetters= { R.drawable.a,
+            R.drawable.b, R.drawable.c, R.drawable.d, R.drawable.e, R.drawable.f,
+            R.drawable.g, R.drawable.h, R.drawable.i, R.drawable.j, R.drawable.k,
+            R.drawable.l, R.drawable.m, R.drawable.n, R.drawable.o, R.drawable.p,
+            R.drawable.q, R.drawable.r, R.drawable.s, R.drawable.t, R.drawable.u,
+            R.drawable.v, R.drawable.w, R.drawable.x, R.drawable.y, R.drawable.z,
+            };
+
+    int[] smallLetters= { R.drawable.sa,
+            R.drawable.sb, R.drawable.sc, R.drawable.sd, R.drawable.se, R.drawable.sf,
+            R.drawable.sg, R.drawable.sh, R.drawable.si, R.drawable.sj, R.drawable.sk,
+            R.drawable.sl, R.drawable.sm, R.drawable.sn, R.drawable.so, R.drawable.sp,
+            R.drawable.sq, R.drawable.sr, R.drawable.ss, R.drawable.st, R.drawable.su,
+            R.drawable.sv, R.drawable.sw, R.drawable.sx, R.drawable.sy, R.drawable.sz,
+    };
 
     @Override
     protected void onCreate(Bundle savedInstanceState)
@@ -44,6 +63,8 @@ public class Question extends AppCompatActivity {
         mNext = findViewById(R.id.buttonNext);
         status1 = findViewById(R.id.correct);
         status2 = findViewById(R.id.wrong);
+        ImgAnimation = findViewById(R.id.imageViewQAnimator);
+        QuestionImage = findViewById(R.id.imageViewAlphaQuestion);
 
         mTTS = new TextToSpeech(this, new TextToSpeech.OnInitListener() {
             @Override
@@ -88,12 +109,16 @@ public class Question extends AppCompatActivity {
         mNext.setVisibility(View.GONE);
 
             String alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-            String fullalphabet = alphabet + alphabet.toLowerCase();
+            //String fullalphabet = alphabet + alphabet.toLowerCase();
             Random random = new Random();
-
-            char code = fullalphabet.charAt(random.nextInt(51));
-
+            int choice = random.nextInt(26);
+            char code = alphabet.charAt(choice);
             mQuestion.setText(Character.toString(code));
+            int sc = random.nextInt(2);
+            if(sc==0)
+                QuestionImage.setImageResource(capitalLetters[choice]);
+            else
+                QuestionImage.setImageResource(smallLetters[choice]);
     }
 
     private void speak()
@@ -120,6 +145,22 @@ public class Question extends AppCompatActivity {
         mTTS.setPitch((float) 1.0);
         mTTS.setSpeechRate((float) 1.0);
         mTTS.speak(text, TextToSpeech.QUEUE_FLUSH, null);
+    }
+
+    public void CorrectAnimation()
+    {
+        ImgAnimation.setVisibility(View.VISIBLE);
+        ImgAnimation.setImageResource(R.drawable.correctanimation);
+        final AnimationDrawable correctAnimation = (AnimationDrawable) ImgAnimation.getDrawable();
+        correctAnimation.start();
+    }
+
+    public void WrongAnimation()
+    {
+        ImgAnimation.setVisibility(View.VISIBLE);
+        ImgAnimation.setImageResource(R.drawable.wronganimation);
+        final AnimationDrawable wrongAnimation = (AnimationDrawable) ImgAnimation.getDrawable();
+        wrongAnimation.start();
     }
 
     @Override
@@ -150,12 +191,14 @@ public class Question extends AppCompatActivity {
                             status1.setVisibility(View.VISIBLE);
                             mTextTv.setText("Correct Answer!");
                             mNext.setVisibility(View.VISIBLE);
+                            CorrectAnimation();
                         }
                         else
                             {
                             mTextTv.setText("Incorrect! Retry");
                             status1.setVisibility(View.GONE);
                             status2.setVisibility(View.VISIBLE);
+                            WrongAnimation();
                             }
 
                 }

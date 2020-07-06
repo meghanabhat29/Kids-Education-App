@@ -147,11 +147,11 @@ public class NumberRevision extends AppCompatActivity {
                 {
                     ArrayList<String> result = data.getStringArrayListExtra(RecognizerIntent.EXTRA_RESULTS);
                     String answer = mQuestion.getText().toString();
-                    if(result.get(0).equalsIgnoreCase(answer) || result.get(1).equalsIgnoreCase(answer)) {
+                    if(result.get(0).equalsIgnoreCase(answer)) {
                         voice("Correct");
                     }
                     else {
-                        voice("Incorrect");
+                        voice(result.get(0));
                     }
                 }
                 break;
