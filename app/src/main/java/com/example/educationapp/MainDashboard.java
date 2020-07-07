@@ -33,7 +33,7 @@ public class MainDashboard extends AppCompatActivity {
     public void Wordfn(View view) {
         Intent intent = new Intent(getApplicationContext(), CategoriesActivity.class);
         startActivity(intent);
-        Toast.makeText(MainDashboard.this,"Under Development", Toast.LENGTH_SHORT).show();
+        //Toast.makeText(MainDashboard.this,"Under Development", Toast.LENGTH_SHORT).show();
     }
     public void Singularfn(View view) {
         Intent intent = new Intent(MainDashboard.this, OneManyDashboard.class);
@@ -62,9 +62,9 @@ public class MainDashboard extends AppCompatActivity {
         //Toast.makeText(MainDashboard.this,"Under Development", Toast.LENGTH_SHORT).show();
     }
     public void Furtherfn(View view) {
-        //Intent intent = new Intent(getApplicationContext(), Dashboard.class);
-        //startActivity(intent);
-        Toast.makeText(MainDashboard.this,"Under Development", Toast.LENGTH_SHORT).show();
+        Intent intent = new Intent(getApplicationContext(), MissingElement.class);
+        startActivity(intent);
+        //Toast.makeText(MainDashboard.this,"Under Development", Toast.LENGTH_SHORT).show();
     }
 
 }

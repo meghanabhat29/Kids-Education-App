@@ -39,6 +39,8 @@
         <activity android:name=".OneMany" />
         <activity android:name=".AlphabetDashboard" />
         <activity android:name=".Question" />
+        <activity android:name=".QuizActivity"/>
+        <activity android:name=".MissingElement"/>
         <activity android:name=".Splashscreen">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

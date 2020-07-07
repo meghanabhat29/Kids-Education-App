@@ -2,9 +2,11 @@ package com.example.educationapp;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.graphics.drawable.AnimationDrawable;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -18,6 +20,8 @@ public class NumberToWords extends AppCompatActivity {
     TextView Question;
     TextInputEditText Answer;
     Button Submit, Check;
+    ImageView ImgAnimation;
+    static boolean flag=true;
     static HashMap<Integer, String> words = new HashMap<>();
 
     @Override
@@ -29,6 +33,7 @@ public class NumberToWords extends AppCompatActivity {
         Answer = findViewById(R.id.textInputEditTextAnswer);
         Submit = findViewById(R.id.buttonSubmit);
         Check = findViewById(R.id.buttonCheck);
+        ImgAnimation = findViewById(R.id.imageViewAnimatorNW);
 
         Check.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -36,6 +41,8 @@ public class NumberToWords extends AppCompatActivity {
             {
                 Answer.setText(WordAnswer(Integer.parseInt(Question.getText().toString())));
                 Answer.setTextColor(0xFF00FF00);
+                flag=false;
+                Submit.setText("NEXT");
             }
         });
 
@@ -44,12 +51,12 @@ public class NumberToWords extends AppCompatActivity {
             public void onClick(View v)
             {
                 if(WordAnswer(Integer.parseInt(Question.getText().toString())).equalsIgnoreCase(Answer.getText().toString())) {
-                    Toast.makeText(NumberToWords.this, "CORRECT ANSWER", Toast.LENGTH_SHORT).show();
+                    if(flag)
+                        CorrectAnimation();
                     nextQuestion();
                 }
                 else
-                    Toast.makeText(NumberToWords.this, "WRONG ANSWER, RETRY", Toast.LENGTH_SHORT).show();
-
+                    WrongAnimation();
             }
         });
 
@@ -100,5 +107,23 @@ public class NumberToWords extends AppCompatActivity {
         Question.setText(Integer.toString(next));
         Answer.setText("");
         Answer.setTextColor(0xFFFFFFFF);
+        flag=true;
+        Submit.setText("SUBMIT");
+    }
+
+    public void CorrectAnimation()
+    {
+        ImgAnimation.setVisibility(View.VISIBLE);
+        ImgAnimation.setImageResource(R.drawable.correctanimation);
+        final AnimationDrawable correctAnimation = (AnimationDrawable) ImgAnimation.getDrawable();
+        correctAnimation.start();
+    }
+
+    public void WrongAnimation()
+    {
+        ImgAnimation.setVisibility(View.VISIBLE);
+        ImgAnimation.setImageResource(R.drawable.wronganimation);
+        final AnimationDrawable wrongAnimation = (AnimationDrawable) ImgAnimation.getDrawable();
+        wrongAnimation.start();
     }
 }

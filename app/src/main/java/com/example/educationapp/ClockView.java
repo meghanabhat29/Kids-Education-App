@@ -82,9 +82,9 @@ public class ClockView extends View {
     private void drawHands(Canvas canvas) {
         Calendar c=Calendar.getInstance();
         //float hour=c.get(Calendar.HOUR_OF_DAY);
-        int hour = new Random().nextInt(12);
-        float minute = new Random().nextInt(60);
-        minute = ((int) minute/5)*5;
+        int hour = TimeReading.hour;
+        int minute = TimeReading.minute;
+        minute = (minute/5)*5;
         Log.d("TIME", hour+":"+minute);
         SharedPreferences pref = getContext().getSharedPreferences("MyPref", 0); // 0 - for private mode
         SharedPreferences.Editor editor = pref.edit();

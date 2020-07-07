@@ -48,7 +48,7 @@ public class LoginActivity extends AppCompatActivity {
         setContentView(R.layout.activity_login);
 
         TAG = "LOGIN";
-
+        //FirebaseAuth.getInstance().signOut();
         mAuth = FirebaseAuth.getInstance();
         if (mAuth.getCurrentUser()!=null){
 
