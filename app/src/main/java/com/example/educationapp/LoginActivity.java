@@ -52,9 +52,7 @@ public class LoginActivity extends AppCompatActivity {
         mAuth = FirebaseAuth.getInstance();
         if (mAuth.getCurrentUser()!=null){
 
-            //String uid = mAuth.getCurrentUser().getUid(); Store in shared prefernce to optimize
 
-            //getName();
             SharedPreferences pref = getApplicationContext().getSharedPreferences("MyPref", 0);
             Intent intent;
             if (pref.getString("name","")!="") {
@@ -158,37 +156,5 @@ public class LoginActivity extends AppCompatActivity {
                 });
     }
 
-//    void getName() {
-//        initFirestore();
-//        db.collection("users")
-//                .document(mAuth.getCurrentUser().getUid())
-//                .get()
-//                .addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
-//                    @Override
-//                    public void onComplete(@NonNull Task<DocumentSnapshot> task) {
-//                        if (task.isSuccessful()) {
-//                            if (task.getResult().getData().get("Name")!=null) {
-//                                Intent intent;
-//                                intent = new Intent(getApplicationContext(), MainDashboard.class);
-//                                intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-//                                startActivity(intent);
-//                                finish();
-//                            }
-//                            Log.d("NAME EXISTS","Success",task.getException());
-//                        } else {
-//                            Intent intent;
-//                            intent = new Intent(getApplicationContext(), Name.class);
-//                            intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-//                            startActivity(intent);
-//                            finish();
-//                            Log.d("NAME DOES NOT EXIST","FAILURE",task.getException());
-//                        }
-//                    }
-//                });
-//
-//    }
-//
-//    private void initFirestore() {
-//        db = FirebaseFirestore.getInstance();
-//    }
+
 }

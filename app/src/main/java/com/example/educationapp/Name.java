@@ -67,7 +67,7 @@ public class Name extends AppCompatActivity {
                 .addOnSuccessListener(new OnSuccessListener<Void>() {
                     @Override
                     public void onSuccess(Void aVoid) {
-                        SharedPreferences pref = getApplicationContext().getSharedPreferences("MyPref", 0); // 0 - for private mode
+                        SharedPreferences pref = getApplicationContext().getSharedPreferences("MyPref",0); // 0 - for private mode
                         SharedPreferences.Editor editor = pref.edit();
                         editor.putString("name", user_name);
                         editor.apply();
