@@ -59,7 +59,7 @@ public class MissingElement extends AppCompatActivity
                         CorrectAnimation();
                     }
                     nextQuestion();
-                    scoreMissing.setText(score +"/"+(noQuestions));
+                    scoreMissing.setText(score +"/"+(noQuestions-1));
                 }
                 else
                     WrongAnimation();
