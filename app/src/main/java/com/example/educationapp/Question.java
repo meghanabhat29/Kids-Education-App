@@ -214,4 +214,11 @@ public class Question extends AppCompatActivity {
                 throw new IllegalStateException("Unexpected value: " + requestCode);
         }
     }
+    @Override
+    public void onBackPressed() {
+        Intent intent = new Intent(this,Dashboard.class);
+        intent.setFlags(Intent.FLAG_ACTIVITY_NO_HISTORY);
+        startActivity(intent);
+        super.onBackPressed();
+    }
 }

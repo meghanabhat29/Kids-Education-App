@@ -2,6 +2,7 @@ package com.example.educationapp;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -16,7 +17,7 @@ public class SmallBigLetter extends AppCompatActivity {
     TextView Small, Capital;
     ImageButton Tick, Cross;
     Button Next;
-    static int score;
+    static int score = 0;
     @Override
     protected void onCreate(Bundle savedInstanceState)
     {
@@ -43,6 +44,7 @@ public class SmallBigLetter extends AppCompatActivity {
                 }
                 else
                 {
+                    score++;
                     Toast.makeText(SmallBigLetter.this,"Correct Answer",Toast.LENGTH_SHORT).show();
                     nextQuestion();
                 }
@@ -99,5 +101,12 @@ public class SmallBigLetter extends AppCompatActivity {
         else
             Capital.setText(Character.toString(code2).toUpperCase());
 
+    }
+    @Override
+    public void onBackPressed() {
+        Intent intent = new Intent(this,Dashboard.class);
+        intent.setFlags(Intent.FLAG_ACTIVITY_NO_HISTORY);
+        startActivity(intent);
+        super.onBackPressed();
     }
 }

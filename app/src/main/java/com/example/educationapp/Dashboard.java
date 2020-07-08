@@ -41,7 +41,6 @@ public class Dashboard extends AppCompatActivity {
                 Intent intent = new Intent(getApplicationContext(), Question.class);
                 intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                 startActivity(intent);
-                score_speak.setText(Integer.toString(Question.count_score));
             }
         });
 
@@ -51,7 +50,6 @@ public class Dashboard extends AppCompatActivity {
                 Intent intent = new Intent(getApplicationContext(), PutInPlace.class);
                 intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                 startActivity(intent);
-                score_pip.setText(Integer.toString(PutInPlace.count_score));
             }
         });
 
@@ -61,9 +59,12 @@ public class Dashboard extends AppCompatActivity {
                 Intent intent = new Intent(getApplicationContext(), SmallBigLetter.class);
                 intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                 startActivity(intent);
-                score_capital.setText(Integer.toString(SmallBigLetter.score));
             }
         });
+
+        score_speak.setText(Integer.toString(Question.count_score));
+        score_pip.setText(Integer.toString(PutInPlace.count_score));
+        score_capital.setText(Integer.toString(SmallBigLetter.score));
 
     }
 }

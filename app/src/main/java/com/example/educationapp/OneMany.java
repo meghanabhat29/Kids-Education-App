@@ -2,6 +2,7 @@ package com.example.educationapp;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.graphics.drawable.AnimationDrawable;
 import android.os.Bundle;
 import android.view.View;
@@ -21,6 +22,7 @@ public class OneMany extends AppCompatActivity {
     Button Submit, Check;
     ImageView ImgAnimation;
     static boolean flag=true;
+    static int score = 0;
     HashMap<String,String> QNA = new HashMap<>();
 
     public void questionBank()
@@ -53,8 +55,10 @@ public class OneMany extends AppCompatActivity {
 
                 if(QNA.get(Question.getText().toString()).equalsIgnoreCase(ans))
                 {
-                    if(flag)
+                    if(flag) {
                         CorrectAnimation();
+                        score++;
+                    }
                     QNA.remove(Question.getText().toString());
                     Answer.setText("");
                     Answer.setTextColor(0xFFFFFFFF);
@@ -99,5 +103,13 @@ public class OneMany extends AppCompatActivity {
         ImgAnimation.setImageResource(R.drawable.wronganimation);
         final AnimationDrawable wrongAnimation = (AnimationDrawable) ImgAnimation.getDrawable();
         wrongAnimation.start();
+    }
+
+    @Override
+    public void onBackPressed() {
+        Intent intent = new Intent(this,OneManyDashboard.class);
+        intent.setFlags(Intent.FLAG_ACTIVITY_NO_HISTORY);
+        startActivity(intent);
+        super.onBackPressed();
     }
 }

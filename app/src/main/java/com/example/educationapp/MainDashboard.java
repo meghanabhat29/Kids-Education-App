@@ -18,8 +18,8 @@ public class MainDashboard extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main_dashboard);
-        serviceIntent = new Intent(getApplicationContext(), MyService.class);
-        startService(serviceIntent);
+        /*serviceIntent = new Intent(getApplicationContext(), MyService.class);
+        startService(serviceIntent);*/
     }
     public void Alphabetfn(View view) {
         Intent intent = new Intent(getApplicationContext(), Dashboard.class);

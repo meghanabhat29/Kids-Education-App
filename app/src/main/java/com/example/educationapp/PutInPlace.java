@@ -2,6 +2,7 @@ package com.example.educationapp;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -183,5 +184,13 @@ public class PutInPlace extends AppCompatActivity {
         Option5.setVisibility(View.VISIBLE);
         Option6.setVisibility(View.VISIBLE);
         clicks=0;
+    }
+
+    @Override
+    public void onBackPressed() {
+        Intent intent = new Intent(this,Dashboard.class);
+        intent.setFlags(Intent.FLAG_ACTIVITY_NO_HISTORY);
+        startActivity(intent);
+        super.onBackPressed();
     }
 }
