@@ -30,7 +30,7 @@ public class MissingElement extends AppCompatActivity
             R.drawable.f26, R.drawable.f27, R.drawable.f28, R.drawable.f29
     };
 
-    String[] Answers = {"38 40","22 24","30 32","9","43 45","56 59","97 99","5","13","23","37",
+    String[] Answers = {"38 40","22 24","30 32","9","43 45","56 58","97 99","5","13","23","37",
                         "V","50","97","70","59","x","r","i","B",
                         "T","Q","E","I","4","k","6 8","3 5","9 11"};
 
