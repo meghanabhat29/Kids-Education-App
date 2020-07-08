@@ -22,6 +22,7 @@ public class PutInPlaceNumber2 extends AppCompatActivity {
     TextInputEditText[] Answer = new TextInputEditText[6];
     int startingAlphabet=1;
     int clicks=0;
+    static int score = 0;
     @Override
     protected void onCreate(Bundle savedInstanceState)
     {
@@ -128,6 +129,7 @@ public class PutInPlaceNumber2 extends AppCompatActivity {
                         }
                     }
                     if (flag) {
+                        score++;
                         Toast.makeText(PutInPlaceNumber2.this, "CORRECT ANSWER", Toast.LENGTH_SHORT).show();
                         generateQues();
                         visible();
@@ -184,4 +186,11 @@ public class PutInPlaceNumber2 extends AppCompatActivity {
     }
 
 
+    @Override
+    public void onBackPressed() {
+        Intent intent = new Intent(this,NumberDashboard2.class);
+        intent.setFlags(Intent.FLAG_ACTIVITY_NO_HISTORY);
+        startActivity(intent);
+        super.onBackPressed();
+    }
 }
