@@ -2,6 +2,7 @@ package com.example.educationapp;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.graphics.drawable.AnimationDrawable;
 import android.os.Bundle;
 import android.view.View;
@@ -53,8 +54,9 @@ public class NumberToWords2 extends AppCompatActivity {
             public void onClick(View v)
             {
                 if(WordAnswer(Integer.parseInt(Question.getText().toString())).equalsIgnoreCase(Answer.getText().toString())) {
-                    if(flag)
+                    if(flag) {
                         CorrectAnimation();
+                    }
                     nextQuestion();
                 }
                 else
@@ -120,4 +122,7 @@ public class NumberToWords2 extends AppCompatActivity {
         final AnimationDrawable wrongAnimation = (AnimationDrawable) ImgAnimation.getDrawable();
         wrongAnimation.start();
     }
+
+
+
 }
