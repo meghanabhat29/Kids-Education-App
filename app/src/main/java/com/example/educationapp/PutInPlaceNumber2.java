@@ -2,6 +2,7 @@ package com.example.educationapp;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -18,9 +19,10 @@ import java.util.Random;
 public class PutInPlaceNumber2 extends AppCompatActivity {
 
     Button Option1, Option2, Option3, Option4, Option5, Option6, Reset, Submit;
-    TextInputEditText Answer[] = new TextInputEditText[6];
+    TextInputEditText[] Answer = new TextInputEditText[6];
     int startingAlphabet=1;
     int clicks=0;
+    static int score = 0;
     @Override
     protected void onCreate(Bundle savedInstanceState)
     {
@@ -127,6 +129,7 @@ public class PutInPlaceNumber2 extends AppCompatActivity {
                         }
                     }
                     if (flag) {
+                        score++;
                         Toast.makeText(PutInPlaceNumber2.this, "CORRECT ANSWER", Toast.LENGTH_SHORT).show();
                         generateQues();
                         visible();
@@ -137,7 +140,7 @@ public class PutInPlaceNumber2 extends AppCompatActivity {
 
                 } catch (Exception e)
                 {
-                    Toast.makeText(PutInPlaceNumber2.this, "COMPLETE THE ANSWER", Toast.LENGTH_SHORT).show();;
+                    Toast.makeText(PutInPlaceNumber2.this, "COMPLETE THE ANSWER", Toast.LENGTH_SHORT).show();
                 }
             }
         });
@@ -147,7 +150,7 @@ public class PutInPlaceNumber2 extends AppCompatActivity {
     private void generateQues() {
         int randomInteger = new Random().nextInt(45) + 51;
         startingAlphabet = randomInteger;
-        Integer arr[] = { startingAlphabet, (startingAlphabet+1), (startingAlphabet + 2), (startingAlphabet+3), (startingAlphabet + 4), (startingAlphabet+5)};
+        Integer[] arr = { startingAlphabet, (startingAlphabet+1), (startingAlphabet + 2), (startingAlphabet+3), (startingAlphabet + 4), (startingAlphabet+5)};
         shuffle(arr);
 
         Option1 = findViewById(R.id.button2);
@@ -180,5 +183,14 @@ public class PutInPlaceNumber2 extends AppCompatActivity {
         Option5.setVisibility(View.VISIBLE);
         Option6.setVisibility(View.VISIBLE);
         clicks=0;
+    }
+
+
+    @Override
+    public void onBackPressed() {
+        Intent intent = new Intent(this,NumberDashboard2.class);
+        intent.setFlags(Intent.FLAG_ACTIVITY_NO_HISTORY);
+        startActivity(intent);
+        super.onBackPressed();
     }
 }

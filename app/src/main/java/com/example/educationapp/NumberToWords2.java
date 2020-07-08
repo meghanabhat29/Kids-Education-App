@@ -2,6 +2,7 @@ package com.example.educationapp;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.graphics.drawable.AnimationDrawable;
 import android.os.Bundle;
 import android.view.View;
@@ -22,6 +23,7 @@ public class NumberToWords2 extends AppCompatActivity {
     Button Submit, Check;
     ImageView ImgAnimation;
     static boolean flag=true;
+    static int score = 0;
     static HashMap<Integer, String> words = new HashMap<>();
 
     @Override
@@ -53,8 +55,10 @@ public class NumberToWords2 extends AppCompatActivity {
             public void onClick(View v)
             {
                 if(WordAnswer(Integer.parseInt(Question.getText().toString())).equalsIgnoreCase(Answer.getText().toString())) {
-                    if(flag)
+                    if(flag) {
+                        score++;
                         CorrectAnimation();
+                    }
                     nextQuestion();
                 }
                 else
@@ -119,5 +123,15 @@ public class NumberToWords2 extends AppCompatActivity {
         ImgAnimation.setImageResource(R.drawable.wronganimation);
         final AnimationDrawable wrongAnimation = (AnimationDrawable) ImgAnimation.getDrawable();
         wrongAnimation.start();
+    }
+
+
+
+    @Override
+    public void onBackPressed() {
+        Intent intent = new Intent(this,NumberDashboard2.class);
+        intent.setFlags(Intent.FLAG_ACTIVITY_NO_HISTORY);
+        startActivity(intent);
+        super.onBackPressed();
     }
 }

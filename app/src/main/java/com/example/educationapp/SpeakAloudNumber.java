@@ -32,6 +32,7 @@ public class SpeakAloudNumber extends AppCompatActivity {
     TextView mQuestion;
     ImageButton mNext;
     private TextToSpeech mTTS;
+    static int score = 0;
     private static final int REQUEST_CODE_SPEECH_INPUT = 1000;
     ConstraintLayout status1;
     ConstraintLayout status2;
@@ -178,6 +179,7 @@ public class SpeakAloudNumber extends AppCompatActivity {
                     ArrayList<String> result = data.getStringArrayListExtra(RecognizerIntent.EXTRA_RESULTS);
                     String answer = mQuestion.getText().toString();
                     if(result.get(0).equalsIgnoreCase(answer)) {
+                        score++;
                         status2.setVisibility(View.GONE);
                         status1.setVisibility(View.VISIBLE);
                         mTextTv.setText("Correct Answer!");
@@ -201,5 +203,12 @@ public class SpeakAloudNumber extends AppCompatActivity {
             default:
                 throw new IllegalStateException("Unexpected value: " + requestCode);
         }
+    }
+    @Override
+    public void onBackPressed() {
+        Intent intent = new Intent(this,NumberDashboard.class);
+        intent.setFlags(Intent.FLAG_ACTIVITY_NO_HISTORY);
+        startActivity(intent);
+        super.onBackPressed();
     }
 }
