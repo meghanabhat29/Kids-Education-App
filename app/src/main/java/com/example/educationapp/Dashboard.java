@@ -6,6 +6,7 @@ import androidx.cardview.widget.CardView;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.TextView;
 
 public class Dashboard extends AppCompatActivity {
 
@@ -20,6 +21,9 @@ public class Dashboard extends AppCompatActivity {
         speak = findViewById(R.id.speak);
         put = findViewById(R.id.inplace);
         caps = findViewById(R.id.caps);
+        final TextView score_pip = findViewById(R.id.scoreAlphabetPIP);
+        final TextView score_speak = findViewById(R.id.scoreAlphabetSpeak);
+        final TextView score_capital = findViewById(R.id.scoreAlphabetCapital);
 
         revise.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -37,6 +41,7 @@ public class Dashboard extends AppCompatActivity {
                 Intent intent = new Intent(getApplicationContext(), Question.class);
                 intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                 startActivity(intent);
+                score_speak.setText(Integer.toString(Question.count_score));
             }
         });
 
@@ -46,6 +51,7 @@ public class Dashboard extends AppCompatActivity {
                 Intent intent = new Intent(getApplicationContext(), PutInPlace.class);
                 intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                 startActivity(intent);
+                score_pip.setText(Integer.toString(PutInPlace.count_score));
             }
         });
 
@@ -55,6 +61,7 @@ public class Dashboard extends AppCompatActivity {
                 Intent intent = new Intent(getApplicationContext(), SmallBigLetter.class);
                 intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                 startActivity(intent);
+                score_capital.setText(Integer.toString(SmallBigLetter.score));
             }
         });
 

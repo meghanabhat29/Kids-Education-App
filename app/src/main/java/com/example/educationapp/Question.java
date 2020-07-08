@@ -35,6 +35,8 @@ public class Question extends AppCompatActivity {
     private static final int REQUEST_CODE_SPEECH_INPUT = 1000;
     ConstraintLayout status1;
     ConstraintLayout status2;
+    static int count_score = 0;
+
 
     int[] capitalLetters= { R.drawable.a,
             R.drawable.b, R.drawable.c, R.drawable.d, R.drawable.e, R.drawable.f,
@@ -190,6 +192,7 @@ public class Question extends AppCompatActivity {
                             status2.setVisibility(View.GONE);
                             status1.setVisibility(View.VISIBLE);
                             mTextTv.setText("Correct Answer!");
+                            count_score++;
                             mNext.setVisibility(View.VISIBLE);
                             CorrectAnimation();
                         }

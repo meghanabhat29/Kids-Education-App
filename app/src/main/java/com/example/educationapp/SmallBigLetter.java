@@ -16,6 +16,7 @@ public class SmallBigLetter extends AppCompatActivity {
     TextView Small, Capital;
     ImageButton Tick, Cross;
     Button Next;
+    static int score;
     @Override
     protected void onCreate(Bundle savedInstanceState)
     {
@@ -62,6 +63,7 @@ public class SmallBigLetter extends AppCompatActivity {
                 }
                 else
                 {
+                    score++;
                     Toast.makeText(SmallBigLetter.this,"Correct Answer",Toast.LENGTH_SHORT).show();
                     nextQuestion();
                 }

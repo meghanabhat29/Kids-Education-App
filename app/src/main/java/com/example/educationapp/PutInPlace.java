@@ -21,6 +21,7 @@ public class PutInPlace extends AppCompatActivity {
     TextInputEditText Answer[] = new TextInputEditText[6];
     char startingAlphabet='A';
     int clicks=0;
+    static int count_score = 0;
     @Override
     protected void onCreate(Bundle savedInstanceState)
     {
@@ -127,6 +128,7 @@ public class PutInPlace extends AppCompatActivity {
                         }
                     }
                     if (flag) {
+                        count_score++;
                         Toast.makeText(PutInPlace.this, "CORRECT ANSWER", Toast.LENGTH_SHORT).show();
                         generateQues();
                         visible();
@@ -141,6 +143,7 @@ public class PutInPlace extends AppCompatActivity {
                 }
             }
         });
+
 
     }
 

@@ -167,6 +167,7 @@ public class AlphabetPractice extends AppCompatActivity {
                     if(result.get(0).equalsIgnoreCase(answer) || result.get(0).contains(answer))
                     {
                         voice("Correct");
+                        score++;
                     }
                     else {
                         voice("Incorrect");
