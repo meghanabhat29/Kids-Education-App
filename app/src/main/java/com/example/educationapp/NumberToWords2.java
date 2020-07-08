@@ -23,6 +23,7 @@ public class NumberToWords2 extends AppCompatActivity {
     Button Submit, Check;
     ImageView ImgAnimation;
     static boolean flag=true;
+    static int score = 0;
     static HashMap<Integer, String> words = new HashMap<>();
 
     @Override
@@ -55,6 +56,7 @@ public class NumberToWords2 extends AppCompatActivity {
             {
                 if(WordAnswer(Integer.parseInt(Question.getText().toString())).equalsIgnoreCase(Answer.getText().toString())) {
                     if(flag) {
+                        score++;
                         CorrectAnimation();
                     }
                     nextQuestion();
@@ -125,4 +127,11 @@ public class NumberToWords2 extends AppCompatActivity {
 
 
 
+    @Override
+    public void onBackPressed() {
+        Intent intent = new Intent(this,NumberDashboard2.class);
+        intent.setFlags(Intent.FLAG_ACTIVITY_NO_HISTORY);
+        startActivity(intent);
+        super.onBackPressed();
+    }
 }
