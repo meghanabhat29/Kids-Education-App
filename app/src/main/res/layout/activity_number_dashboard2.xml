@@ -121,8 +121,8 @@
             app:cardElevation="6dp">
 
             <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="122dp"
+                android:layout_height="196dp"
                 android:layout_gravity="center_horizontal|center_vertical"
                 android:layout_margin="16dp"
                 android:gravity="center"
@@ -143,6 +143,18 @@
                     android:textColor="@color/textcardColor"
                     android:textSize="14sp"
                     android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="18dp"
+                    android:text="Latest Score: " />
+
+                <TextView
+                    android:id="@+id/scoreNumber2Speak"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="" />
             </LinearLayout>
 
         </androidx.cardview.widget.CardView>
@@ -183,6 +195,18 @@
                     android:textColor="@color/textcardColor"
                     android:textSize="14sp"
                     android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="18dp"
+                    android:text="Latest Score: " />
+
+                <TextView
+                    android:id="@+id/scoreNumber2PIP"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="" />
             </LinearLayout>
 
         </androidx.cardview.widget.CardView>
@@ -201,8 +225,8 @@
             app:cardElevation="6dp">
 
             <LinearLayout
-                android:layout_width="103dp"
-                android:layout_height="140dp"
+                android:layout_width="137dp"
+                android:layout_height="205dp"
                 android:layout_gravity="center_horizontal|center_vertical"
                 android:layout_margin="16dp"
                 android:gravity="center"
@@ -223,6 +247,18 @@
                     android:textColor="@color/textcardColor"
                     android:textSize="14sp"
                     android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="18dp"
+                    android:text="Latest Score: " />
+
+                <TextView
+                    android:id="@+id/scoreNumber2NTW"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="" />
             </LinearLayout>
 
         </androidx.cardview.widget.CardView>

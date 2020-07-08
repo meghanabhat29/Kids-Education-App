@@ -8,35 +8,70 @@
     tools:context=".OneManyDashboard">
 
 
+
     <Button
         android:id="@+id/buttonOneMany"
-        android:layout_width="169dp"
+        android:layout_width="179dp"
         android:layout_height="106dp"
         android:layout_marginBottom="388dp"
-        android:background="@drawable/btn_background"
+        android:background="@drawable/layout_border"
         android:fontFamily="@font/bold"
         android:text="One to Many"
-        android:visibility="visible"
         android:textSize="20sp"
         android:tint="@color/cardColor"
+        android:visibility="visible"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textViewIntro"
+        app:layout_constraintVertical_bias="0.986" />
+
+    <TextView
+        android:id="@+id/textView11"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/bold"
+        android:text="Latest Score: "
+        android:textSize="20sp"
+        app:layout_constraintBottom_toTopOf="@+id/buttonManyOne"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.423"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/buttonOneMany"
+        app:layout_constraintVertical_bias="0.36" />
+
+    <TextView
+        android:id="@+id/scoreSingular"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/bold"
+        android:text=""
+        android:textSize="20sp"
+        app:layout_constraintBottom_toTopOf="@+id/buttonManyOne"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.063"
+        app:layout_constraintStart_toEndOf="@+id/textView11"
+        app:layout_constraintTop_toBottomOf="@+id/buttonOneMany"
+        app:layout_constraintVertical_bias="0.358" />
 
     <Button
         android:id="@+id/buttonManyOne"
         android:layout_width="169dp"
         android:layout_height="106dp"
         android:layout_marginBottom="180dp"
-        android:background="@drawable/btn_background"
+        android:background="@drawable/layout_border"
         android:fontFamily="@font/bold"
         android:text="Many to One"
-        android:visibility="visible"
         android:textSize="20sp"
         android:tint="@color/cardColor"
+        android:visibility="visible"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/buttonOneMany"
+        app:layout_constraintVertical_bias="0.98" />
+
+
 
     <TextView
         android:id="@+id/textViewIntro"
@@ -52,6 +87,34 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.037" />
+
+    <TextView
+        android:id="@+id/textView12"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/bold"
+        android:text="Latest Score: "
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.423"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/buttonManyOne"
+        app:layout_constraintVertical_bias="0.154" />
+
+    <TextView
+        android:id="@+id/scorePlural"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/bold"
+        android:text=""
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.189"
+        app:layout_constraintStart_toEndOf="@+id/textView12"
+        app:layout_constraintTop_toBottomOf="@+id/buttonManyOne"
+        app:layout_constraintVertical_bias="0.154" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
