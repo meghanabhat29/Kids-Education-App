@@ -19,6 +19,8 @@ public class MissingElement extends AppCompatActivity
     ImageView Question, ImgAnimation;
     TextInputEditText Answer;
     Button Submit, Check;
+    int score = 0;
+    int noQuestions = 0;
 
     int[] imageQuestions = { R.drawable.f1, R.drawable.f2, R.drawable.f3, R.drawable.f4, R.drawable.f5,
             R.drawable.f6, R.drawable.f7, R.drawable.f8, R.drawable.f9, R.drawable.f10,
@@ -45,20 +47,25 @@ public class MissingElement extends AppCompatActivity
         Check = findViewById(R.id.buttonCheckMissing);
         ImgAnimation = findViewById(R.id.imageViewAnimatorMissing);
         nextQuestion();
+        final TextView scoreMissing = findViewById(R.id.score_missing);
 
         Submit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 if(Answer.getText().toString().equals(Answers[i]))
                 {
-                    if(flag)
+                    if(flag) {
+                        score++;
                         CorrectAnimation();
+                    }
                     nextQuestion();
+                    scoreMissing.setText(score +"/"+(noQuestions));
                 }
                 else
                     WrongAnimation();
             }
         });
+
 
         Check.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -69,10 +76,12 @@ public class MissingElement extends AppCompatActivity
                 flag=false;
             }
         });
+
     }
 
     void nextQuestion()
     {
+        noQuestions++;
         Random random = new Random();
         i = random.nextInt(29);
         Question.setImageResource(imageQuestions[i]);
