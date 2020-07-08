@@ -25,6 +25,7 @@ public class Article extends AppCompatActivity {
     ImageView ImgQuestion, ImgAnimation;
     int check=0;
     int score = 0;
+    int noQuestions = 0;
     final int[] articleImages = {R.drawable.apple_article, R.drawable.bat_article, R.drawable.car_article,
             R.drawable.chair_article, R.drawable.egg_article, R.drawable.elephant_article,
             R.drawable.icecream, R.drawable.ostrich_article, R.drawable.owl_article,
@@ -167,7 +168,7 @@ public class Article extends AppCompatActivity {
                 }
             });
         }
-        scoreArticle.setText(Integer.toString(score));
+        scoreArticle.setText(score +"/"+(noQuestions));
     }
 
     public void CorrectAnimation()
@@ -194,7 +195,7 @@ public class Article extends AppCompatActivity {
 
         // GET NEXT TEXT
 
-
+        noQuestions++;
         Option1 = findViewById(R.id.button2);
         Option2 = findViewById(R.id.button4);
         Question = findViewById(R.id.textView2);
