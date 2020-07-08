@@ -21,6 +21,9 @@ public class NumberDashboard2 extends AppCompatActivity {
         speak = findViewById(R.id.speak);
         put = findViewById(R.id.inplace);
         caps = findViewById(R.id.caps);
+        TextView scoreSpeak = findViewById(R.id.scoreNumber2Speak);
+        TextView scorePIP = findViewById(R.id.scoreNumber2PIP);
+        TextView scoreNTW = findViewById(R.id.scoreNumber2NTW);
 
         revise.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -59,6 +62,9 @@ public class NumberDashboard2 extends AppCompatActivity {
             }
         });
 
+        scoreSpeak.setText(Integer.toString(SpeakAloudNumber2.score));
+        scorePIP.setText(Integer.toString(PutInPlaceNumber2.score));
+        scoreNTW.setText(Integer.toString(NumberToWords2.score));
 
     }
 }
