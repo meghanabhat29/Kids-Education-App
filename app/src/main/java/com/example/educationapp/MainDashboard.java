@@ -61,6 +61,12 @@ public class MainDashboard extends AppCompatActivity {
         startActivity(intent);
         //Toast.makeText(MainDashboard.this,"Under Development", Toast.LENGTH_SHORT).show();
     }
+
+    public void ShapesFn(View view) {
+        Intent intent = new Intent(getApplicationContext(), Shapes.class);
+        startActivity(intent);
+        //Toast.makeText(MainDashboard.this,"Under Development", Toast.LENGTH_SHORT).show();
+    }
     public void Furtherfn(View view) {
         Intent intent = new Intent(getApplicationContext(), MissingElement.class);
         startActivity(intent);

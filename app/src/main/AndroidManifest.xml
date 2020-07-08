@@ -9,10 +9,10 @@
         android:roundIcon="@mipmap/kid_launcher"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".Name">
-
-        </activity>
-        <activity android:name=".ForgotPassword"/>
+        <activity android:name=".ShapesRevision"></activity>
+        <activity android:name=".Shapes" />
+        <activity android:name=".Name" />
+        <activity android:name=".ForgotPassword" />
         <activity android:name=".RegistrationPage" />
         <activity android:name=".ThingsActivity" />
         <activity android:name=".CategoriesActivity" />
@@ -39,8 +39,8 @@
         <activity android:name=".OneMany" />
         <activity android:name=".AlphabetDashboard" />
         <activity android:name=".Question" />
-        <activity android:name=".QuizActivity"/>
-        <activity android:name=".MissingElement"/>
+        <activity android:name=".QuizActivity" />
+        <activity android:name=".MissingElement" />
         <activity android:name=".Splashscreen">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -50,7 +50,8 @@
         </activity>
         <activity android:name=".LoginActivity" />
         <activity android:name=".MainActivity" />
-        <service android:name=".MyService"/>
+
+        <service android:name=".MyService" />
     </application>
 
 </manifest>

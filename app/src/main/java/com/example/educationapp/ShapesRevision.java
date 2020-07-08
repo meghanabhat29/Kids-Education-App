@@ -18,48 +18,43 @@ import android.widget.Toast;
 import java.util.ArrayList;
 import java.util.Locale;
 
-public class AlphabetPractice extends AppCompatActivity {
+public class ShapesRevision extends AppCompatActivity {
     TextView mTextTv;
     ImageButton mSpeakBtn, mVoiceBtn;
     TextView mQuestion;
     Button mNext;
-    ImageView capitalImage, smallImage;
+    ImageView ImgQuestion;
     private TextToSpeech mTTS;
     private static final int REQUEST_CODE_SPEECH_INPUT = 1000;
-    static int a = 65;
+    static int a = -1;
+    int[] shapeImages= {
+            R.drawable.shape8,R.drawable.shape1, R.drawable.shape16, R.drawable.shape6,
+            R.drawable.shape11, R.drawable.shape18, R.drawable.shape24, R.drawable.shape10,
+            R.drawable.shape25, R.drawable.shape13,R.drawable.shape2,R.drawable.shape5,
+            R.drawable.shape4,R.drawable.shape7,R.drawable.shape12,R.drawable.shape9,
+            R.drawable.shape14, R.drawable.shape15,R.drawable.shape23,
+            R.drawable.shape10, R.drawable.shape11};
 
-    private int score;
-    private boolean answer;
 
+    String[] shapeNames = { "Circle","Triangle", "Square", "Rectangle",
+            "Pentagon","Hexagon","Heptagon","Octagon",
+            "Nonagon","Decagon","Crescent","Rhombus",
+            "Paralellogram","Trapezium","Ellipse","Heart",
+            "Star","Arrow","Kite"};
 
-    int[] capitalLetters= { R.drawable.a,
-            R.drawable.b, R.drawable.c, R.drawable.d, R.drawable.e, R.drawable.f,
-            R.drawable.g, R.drawable.h, R.drawable.i, R.drawable.j, R.drawable.k,
-            R.drawable.l, R.drawable.m, R.drawable.n, R.drawable.o, R.drawable.p,
-            R.drawable.q, R.drawable.r, R.drawable.s, R.drawable.t, R.drawable.u,
-            R.drawable.v, R.drawable.w, R.drawable.x, R.drawable.y, R.drawable.z,
-    };
-
-    int[] smallLetters= { R.drawable.sa,
-            R.drawable.sb, R.drawable.sc, R.drawable.sd, R.drawable.se, R.drawable.sf,
-            R.drawable.sg, R.drawable.sh, R.drawable.si, R.drawable.sj, R.drawable.sk,
-            R.drawable.sl, R.drawable.sm, R.drawable.sn, R.drawable.so, R.drawable.sp,
-            R.drawable.sq, R.drawable.sr, R.drawable.ss, R.drawable.st, R.drawable.su,
-            R.drawable.sv, R.drawable.sw, R.drawable.sx, R.drawable.sy, R.drawable.sz,
-    };
 
     @Override
     protected void onCreate(Bundle savedInstanceState)
     {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_alphabet_practice);
+        setContentView(R.layout.activity_shapes_revision);
         mTextTv = findViewById(R.id.textTv);
         mQuestion = findViewById(R.id.textViewQuestion);
         mVoiceBtn = findViewById(R.id.micBtn);
         mNext = findViewById(R.id.buttonNext);
         mSpeakBtn = findViewById(R.id.imageViewSpeak);
-        capitalImage = findViewById(R.id.imageViewAlphabet);
-        smallImage = findViewById(R.id.imageViewSmallPractice);
+        ImgQuestion = findViewById(R.id.imageViewNumber);
+
 
         mTTS = new TextToSpeech(this, new TextToSpeech.OnInitListener() {
             @Override
@@ -79,12 +74,8 @@ public class AlphabetPractice extends AppCompatActivity {
             @Override
             public void onClick(View view)
             {
-                if(mQuestion.getText().toString().equals("Hello"))
-                    voice("Press Next");
-                else {
-                    String question = mQuestion.getText().toString().substring(0, 1);
-                    voice(question);
-                }
+                String question = mQuestion.getText().toString();
+                voice(question);
             }
         });
 
@@ -108,8 +99,8 @@ public class AlphabetPractice extends AppCompatActivity {
                 mVoiceBtn.setVisibility(View.VISIBLE);
                 mSpeakBtn.setVisibility(View.VISIBLE);
                 mNext.setText("NEXT");
-                if(a==90 || mQuestion.getText().toString().equals("Hello"))
-                    a=64;
+                if(a==50 || mQuestion.getText().toString().equals("Hello"))
+                    a=-1;
                 nextQuestion(++a);
             }
         });
@@ -118,13 +109,8 @@ public class AlphabetPractice extends AppCompatActivity {
 
     private void nextQuestion(int i)
     {
-
-        char capital = (char) i;
-        char small = (char) (i+32);
-
-        mQuestion.setText(Character.toString(capital)+" "+Character.toString(small));
-        capitalImage.setImageResource(capitalLetters[i-65]);
-        smallImage.setImageResource(smallLetters[i-65]);
+        mQuestion.setText(shapeNames[i]);
+        ImgQuestion.setImageResource(shapeImages[i]);
     }
 
     private void voice(String text)
@@ -152,47 +138,6 @@ public class AlphabetPractice extends AppCompatActivity {
         {
             Toast.makeText(this, ""+e.getMessage(), Toast.LENGTH_SHORT).show();
         }
-    }
-
-    @Override
-    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
-        super.onActivityResult(requestCode, resultCode, data);
-        switch (requestCode)
-        {
-            case REQUEST_CODE_SPEECH_INPUT:{
-                if(resultCode == RESULT_OK && null!=data)
-                {
-                    ArrayList<String> result = data.getStringArrayListExtra(RecognizerIntent.EXTRA_RESULTS);
-                    String answer = mQuestion.getText().toString().substring(2);
-                    if(result.get(0).equalsIgnoreCase(answer) || result.get(0).contains(answer))
-                    {
-                        voice("Correct");
-                    }
-                    else {
-                        voice("Incorrect");
-                        Toast.makeText(this, ""+result.get(0), Toast.LENGTH_SHORT).show();
-
-                    }
-                }
-                break;
-
-            }
-
-
-            default:
-                throw new IllegalStateException("Unexpected value: " + requestCode);
-        }
-    }
-
-    @Override
-    protected void onDestroy()
-    {
-        if(mTTS != null)
-        {
-            mTTS.stop();
-            mTTS.shutdown();
-        }
-        super.onDestroy();
     }
 
 }
