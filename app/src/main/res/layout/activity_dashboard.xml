@@ -32,24 +32,11 @@
         android:layout_marginStart="18dp"
         android:layout_marginTop="32dp"
         android:fontFamily="@font/mo_re"
-        android:text="Mr.Boris Johnson"
+        android:text=""
         android:textColor="#ffffff"
         android:textSize="20sp"
         app:layout_constraintStart_toEndOf="@id/user_photo"
         app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
-        android:id="@+id/user_id"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="18dp"
-        android:layout_marginTop="32dp"
-        android:fontFamily="@font/mo_re"
-        android:text="ID-040199"
-        android:textColor="#ffffff"
-        android:textSize="16sp"
-        app:layout_constraintStart_toEndOf="@id/user_photo"
-        app:layout_constraintTop_toTopOf="@id/user_name" />
 
     <GridLayout
         android:layout_width="match_parent"
