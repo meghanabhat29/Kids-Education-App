@@ -494,7 +494,7 @@
                         android:layout_height="93dp"
                         android:background="@drawable/circle"
                         android:padding="10dp"
-                        android:src="@drawable/ic_article" />
+                        android:src="@drawable/questionmark" />
 
                     <TextView
                         android:layout_width="wrap_content"

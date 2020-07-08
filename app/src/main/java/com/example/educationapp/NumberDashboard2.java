@@ -65,6 +65,7 @@ public class NumberDashboard2 extends AppCompatActivity {
                 Intent intent = new Intent(getApplicationContext(), SpeakAloudNumber2.class);
                 intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                 startActivity(intent);
+                finish();
             }
         });
 
@@ -74,6 +75,7 @@ public class NumberDashboard2 extends AppCompatActivity {
                 Intent intent = new Intent(getApplicationContext(), PutInPlaceNumber2.class);
                 intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                 startActivity(intent);
+                finish();
             }
         });
 
@@ -83,6 +85,7 @@ public class NumberDashboard2 extends AppCompatActivity {
                 Intent intent = new Intent(getApplicationContext(), NumberToWords2.class);
                 intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                 startActivity(intent);
+                finish();
             }
         });
 

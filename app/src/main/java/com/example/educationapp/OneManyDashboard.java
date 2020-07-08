@@ -27,6 +27,7 @@ public class OneManyDashboard extends AppCompatActivity {
             public void onClick(View v) {
                 Intent intent = new Intent(OneManyDashboard.this, OneMany.class);
                 startActivity(intent);
+                finish();
             }
         });
 
@@ -35,6 +36,7 @@ public class OneManyDashboard extends AppCompatActivity {
             public void onClick(View v) {
                 Intent intent = new Intent(OneManyDashboard.this, ManyOne.class);
                 startActivity(intent);
+                finish();
 
             }
         });
