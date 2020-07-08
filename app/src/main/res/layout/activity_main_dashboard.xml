@@ -441,11 +441,10 @@
                 android:orientation="vertical">
 
                 <ImageView
-                    android:layout_width="93dp"
-                    android:layout_height="93dp"
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
                     android:background="@drawable/circle"
                     android:padding="10dp"
-                    android:paddingTop="30dp"
                     android:src="@drawable/shapes" />
 
                 <TextView
@@ -465,7 +464,9 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:gravity="center"
-                    android:padding="5dp"
+                    android:paddingHorizontal="5dp"
+                    android:paddingBottom="5dp"
+                    android:paddingTop="0dp"
                     android:text="Learn how to identify shapes"
                     android:textColor="@android:color/darker_gray" />
 
