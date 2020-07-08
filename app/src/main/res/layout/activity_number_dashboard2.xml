@@ -121,8 +121,8 @@
             app:cardElevation="6dp">
 
             <LinearLayout
-                android:layout_width="122dp"
-                android:layout_height="196dp"
+                android:layout_width="125dp"
+                android:layout_height="215dp"
                 android:layout_gravity="center_horizontal|center_vertical"
                 android:layout_margin="16dp"
                 android:gravity="center"
@@ -147,8 +147,8 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="18dp"
-                    android:text="Latest Score: " />
+                    android:layout_marginTop="15dp"
+                    android:text="Latest Score " />
 
                 <TextView
                     android:id="@+id/scoreNumber2Speak"
@@ -189,7 +189,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="8dp"
+                    android:layout_marginTop="7dp"
                     android:fontFamily="@font/mo_re"
                     android:text="Put in place"
                     android:textColor="@color/textcardColor"
@@ -199,8 +199,8 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="18dp"
-                    android:text="Latest Score: " />
+                    android:layout_marginTop="14dp"
+                    android:text="Latest Score " />
 
                 <TextView
                     android:id="@+id/scoreNumber2PIP"
@@ -225,8 +225,8 @@
             app:cardElevation="6dp">
 
             <LinearLayout
-                android:layout_width="137dp"
-                android:layout_height="205dp"
+                android:layout_width="131dp"
+                android:layout_height="207dp"
                 android:layout_gravity="center_horizontal|center_vertical"
                 android:layout_margin="16dp"
                 android:gravity="center"
@@ -241,18 +241,19 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="8dp"
+                    android:layout_marginTop="32dp"
                     android:fontFamily="@font/mo_re"
                     android:text="Numbers to words"
+                    android:layout_gravity="center"
                     android:textColor="@color/textcardColor"
-                    android:textSize="14sp"
+                    android:textSize="13sp"
                     android:textStyle="bold" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="18dp"
-                    android:text="Latest Score: " />
+                    android:layout_marginTop="15dp"
+                    android:text="Latest Score " />
 
                 <TextView
                     android:id="@+id/scoreNumber2NTW"
