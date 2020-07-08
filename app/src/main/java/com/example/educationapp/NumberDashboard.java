@@ -6,6 +6,9 @@ import androidx.cardview.widget.CardView;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.TextView;
+
+import org.w3c.dom.Text;
 
 public class NumberDashboard extends AppCompatActivity {
 
@@ -20,6 +23,10 @@ public class NumberDashboard extends AppCompatActivity {
         speak = findViewById(R.id.speak);
         put = findViewById(R.id.inplace);
         caps = findViewById(R.id.caps);
+
+        TextView scoreSpeak = findViewById(R.id.scoreNumber1Speak);
+        TextView scorePIP = findViewById(R.id.scoreNumber1PIP);
+        TextView scoreNTW = findViewById(R.id.scoreNumber1NTW);
 
         revise.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -57,6 +64,10 @@ public class NumberDashboard extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+
+        scoreSpeak.setText(Integer.toString(SpeakAloudNumber.score));
+        scorePIP.setText(Integer.toString(PutInPlaceNumber.score));
+        scoreNTW.setText(Integer.toString(NumberToWords.score));
 
     }
 }

@@ -2,6 +2,7 @@ package com.example.educationapp;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -20,6 +21,7 @@ public class PutInPlaceNumber extends AppCompatActivity {
     Button Option1, Option2, Option3, Option4, Option5, Option6, Reset, Submit;
     TextInputEditText Answer[] = new TextInputEditText[6];
     int startingAlphabet=1;
+    static int score = 0;
     int clicks=0;
     @Override
     protected void onCreate(Bundle savedInstanceState)
@@ -127,6 +129,7 @@ public class PutInPlaceNumber extends AppCompatActivity {
                         }
                     }
                     if (flag) {
+                        score++;
                         Toast.makeText(PutInPlaceNumber.this, "CORRECT ANSWER", Toast.LENGTH_SHORT).show();
                         generateQues();
                         visible();
@@ -180,5 +183,12 @@ public class PutInPlaceNumber extends AppCompatActivity {
         Option5.setVisibility(View.VISIBLE);
         Option6.setVisibility(View.VISIBLE);
         clicks=0;
+    }
+    @Override
+    public void onBackPressed() {
+        Intent intent = new Intent(this,NumberDashboard.class);
+        intent.setFlags(Intent.FLAG_ACTIVITY_NO_HISTORY);
+        startActivity(intent);
+        super.onBackPressed();
     }
 }
