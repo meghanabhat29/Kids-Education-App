@@ -8,17 +8,12 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
-
-<<<<<<< HEAD
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.EventListener;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.FirebaseFirestoreException;
-=======
-import org.w3c.dom.Text;
->>>>>>> 17e4703955aa9b113eaef763dc2524e89ee33539
 
 public class NumberDashboard extends AppCompatActivity {
 

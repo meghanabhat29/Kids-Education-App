@@ -8,16 +8,12 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
-<<<<<<< HEAD
-
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.EventListener;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.FirebaseFirestoreException;
-=======
->>>>>>> 17e4703955aa9b113eaef763dc2524e89ee33539
 
 public class NumberDashboard2 extends AppCompatActivity {
 
@@ -36,7 +32,6 @@ public class NumberDashboard2 extends AppCompatActivity {
         speak = findViewById(R.id.speak);
         put = findViewById(R.id.inplace);
         caps = findViewById(R.id.caps);
-<<<<<<< HEAD
         name = findViewById(R.id.user_nameN2);
 
         mAuth = FirebaseAuth.getInstance();
@@ -50,11 +45,9 @@ public class NumberDashboard2 extends AppCompatActivity {
                 name.setText("ID: "+ uid.substring(0,5));
             }
         });
-=======
         TextView scoreSpeak = findViewById(R.id.scoreNumber2Speak);
         TextView scorePIP = findViewById(R.id.scoreNumber2PIP);
         TextView scoreNTW = findViewById(R.id.scoreNumber2NTW);
->>>>>>> 17e4703955aa9b113eaef763dc2524e89ee33539
 
         revise.setOnClickListener(new View.OnClickListener() {
             @Override
