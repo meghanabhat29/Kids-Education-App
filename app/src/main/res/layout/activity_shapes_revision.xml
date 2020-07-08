@@ -9,8 +9,8 @@
 
     <FrameLayout
         android:id="@+id/frameLayout"
-        android:layout_width="354dp"
-        android:layout_height="220dp"
+        android:layout_width="match_parent"
+        android:layout_height="300dp"
         android:layout_marginTop="40dp"
         android:background="@drawable/layout_border"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -26,8 +26,8 @@
 
             <TextView
                 android:id="@+id/textViewQuestion"
-                android:layout_width="355dp"
-                android:layout_height="236dp"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
                 android:fontFamily="@font/bold"
                 android:gravity="center"
                 android:text="HELLO"
@@ -44,10 +44,11 @@
 
             <ImageView
                 android:id="@+id/imageViewNumber"
-                android:layout_width="380dp"
-                android:layout_height="260dp"
+                android:layout_width="290dp"
+                android:layout_height="242dp"
                 app:layout_constraintBottom_toBottomOf="@+id/textViewQuestion"
                 app:layout_constraintEnd_toEndOf="@+id/textViewQuestion"
+                app:layout_constraintHorizontal_bias="0.476"
                 app:layout_constraintStart_toStartOf="@+id/textViewQuestion"
                 app:layout_constraintTop_toTopOf="parent"
                 app:srcCompat="@drawable/hello" />
@@ -64,14 +65,15 @@
         android:layout_height="83dp"
         android:layout_marginTop="48dp"
         android:background="@drawable/button"
+        android:visibility="visible"
         app:layout_constraintBottom_toTopOf="@+id/frameLayout2"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.494"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/frameLayout"
-        app:layout_constraintVertical_bias="0.108"
-        android:visibility="visible"
+        app:layout_constraintVertical_bias="0.293"
         app:srcCompat="@drawable/speak" />
+
     <ImageButton
         android:id="@+id/micBtn"
         android:layout_width="243dp"
