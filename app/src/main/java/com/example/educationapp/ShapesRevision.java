@@ -140,4 +140,45 @@ public class ShapesRevision extends AppCompatActivity {
         }
     }
 
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        switch (requestCode)
+        {
+            case REQUEST_CODE_SPEECH_INPUT:{
+                if(resultCode == RESULT_OK && null!=data)
+                {
+                    ArrayList<String> result = data.getStringArrayListExtra(RecognizerIntent.EXTRA_RESULTS);
+                    String answer = mQuestion.getText().toString();
+                    if(result.get(0).equalsIgnoreCase(answer))
+                    {
+                        voice("Correct");
+                    }
+                    else {
+                        voice("Incorrect");
+                        //Toast.makeText(this, ""+result.get(0), Toast.LENGTH_SHORT).show();
+
+                    }
+                }
+                break;
+
+            }
+
+
+            default:
+                throw new IllegalStateException("Unexpected value: " + requestCode);
+        }
+    }
+
+    @Override
+    protected void onDestroy()
+    {
+        if(mTTS != null)
+        {
+            mTTS.stop();
+            mTTS.shutdown();
+        }
+        super.onDestroy();
+    }
+
 }
